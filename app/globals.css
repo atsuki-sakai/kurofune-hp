@@ -83,3 +83,11 @@
   letter-spacing: 0.06rem;
   line-height: 1rem;
 }
+
+@media (min-width: 640px) {
+    .sm\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
+           --tw-space-x-reverse: 0;
+           margin-right: calc(0.5rem* var(--tw-space-x-reverse));
+           margin-left: 0 !important;
+    }
+}
