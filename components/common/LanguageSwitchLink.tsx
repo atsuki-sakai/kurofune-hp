@@ -11,7 +11,12 @@ function LanguageSwitchLink({ lang, currentLang }: LanguageSwitchLinkProps) {
   const pathname = usePathname();
 
   const handleLanguageChange = (lang: string) => {
-    const newPath = pathname.replace(`/${currentLang}`, `/${lang}`);
+    let newPath;
+    if (pathname === "/") {
+      newPath = pathname.replace("/", "/" + lang);
+    } else {
+      newPath = pathname.replace(`/${currentLang}`, `/${lang}`);
+    }
     router.push(newPath);
   };
 
