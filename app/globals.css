@@ -74,12 +74,12 @@
 
 @layer base {
   body {
-    @apply overflow-hidden;
+    @apply overflow-x-hidden overflow-y-auto;
   }
 }
 
 .navigation-menu-link-small {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   letter-spacing: 0.06rem;
   line-height: 1rem;
 }

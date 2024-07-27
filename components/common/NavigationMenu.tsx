@@ -22,34 +22,14 @@ async function NavigationMenuDemo({ lang }: Props) {
 
   const components = [
     {
-      title: t("menu.about-us_title"),
-      href: "/docs/primitives/hover-card",
-      description: t("menu.about-us_description"),
-    },
-    {
-      title: t("menu.service_title"),
-      href: "/docs/primitives/tabs",
-      description: t("menu.service_description"),
-    },
-    {
       title: t("menu.news"),
       href: "/docs/primitives/progress",
       description: t("menu.news_description"),
     },
     {
-      title: t("menu.contact"),
-      href: "/docs/primitives/scroll-area",
-      description: t("menu.contact_description"),
-    },
-    {
       title: t("menu.blog"),
       href: "/docs/primitives/tabs",
       description: t("menu.blog_description"),
-    },
-    {
-      title: t("menu.faq"),
-      href: "/docs/primitives/tooltip",
-      description: t("menu.faq_description"),
     },
     {
       title: t("menu.company"),
@@ -145,6 +125,18 @@ async function NavigationMenuDemo({ lang }: Props) {
               ))}
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/contact" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "navigation-menu-link-small tracking-wider font-bold bg-black text-white dark:bg-white dark:text-black"
+              )}
+            >
+              {t("menu.contact")}
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

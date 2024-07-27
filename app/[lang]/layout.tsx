@@ -5,6 +5,7 @@ import { dir } from "i18next";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "./Header";
+import Footer from "./Footer";
 import { languages } from "../i18n/settings";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -45,6 +46,7 @@ export default function RootLayout({
           <main className="w-full max-w-pagewidth mx-auto min-h-screen p-2 mt-[--header-height]">
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

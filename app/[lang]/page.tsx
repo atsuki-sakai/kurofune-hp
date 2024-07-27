@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslation } from "../i18n";
 
 export default async function Home({
@@ -9,7 +10,9 @@ export default async function Home({
 
   return (
     <div>
-      <h1>{t("home.text-1")}</h1>
+      <div className="flex justify-center items-center">
+        <Image src="/images/logo.png" alt="logo" width={100} height={100} />
+      </div>
       <p>{t("home.text-2")}</p>
     </div>
   );
