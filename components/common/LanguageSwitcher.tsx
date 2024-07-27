@@ -1,20 +1,18 @@
-import Link from "next/link";
-import { languages } from "../../app/i18n/settings";
-
+import { useTranslation } from "@/app/i18n/index";
+import { languages } from "@/app/i18n/settings";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "../ui/button";
-
-import { useTranslation } from "@/app/i18n";
+import LanguageSwitchLink from "./LanguageSwitchLink";
 
 async function LanguageSwitcher({ currentLang }: { currentLang: string }) {
   const { t } = await useTranslation(currentLang, "common");
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -26,13 +24,11 @@ async function LanguageSwitcher({ currentLang }: { currentLang: string }) {
         <DropdownMenuLabel>{t("menu.switchLanguage")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {languages.map((lang: string) => (
-          <Link
+          <LanguageSwitchLink
             key={lang}
-            className="block w-full"
-            href={lang === "/" ? "/" : `/${lang}`}
-          >
-            <DropdownMenuItem>{lang.toUpperCase()}</DropdownMenuItem>
-          </Link>
+            lang={lang}
+            currentLang={currentLang}
+          />
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
