@@ -13,14 +13,25 @@ const Logo = () => {
   }, []);
 
   if (!mounted) {
-    return <Image src={"/logo-black.png"} alt="logo" width={30} height={30} />; // または、デフォルトのロゴを表示
+    return (
+      <Image
+        src={"/assets/images/logo-black.png"}
+        alt="logo"
+        width={30}
+        height={30}
+      />
+    ); // または、デフォルトのロゴを表示
   }
 
   const currentTheme = theme === "system" ? resolvedTheme : theme;
 
   return (
     <Image
-      src={currentTheme === "dark" ? "/logo-white.png" : "/logo-black.png"}
+      src={
+        currentTheme === "dark"
+          ? "/assets/images/logo-white.png"
+          : "/assets/images/logo-black.png"
+      }
       alt="logo"
       width={30}
       height={30}

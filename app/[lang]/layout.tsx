@@ -43,9 +43,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header lang={lang} />
-          <main className="w-full max-w-pagewidth mx-auto min-h-screen p-2 mt-[--header-height]">
-            {children}
-          </main>
+          <main className="">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
