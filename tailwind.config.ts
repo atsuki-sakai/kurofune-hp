@@ -67,11 +67,16 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        smoothScroll: {
+          '0%': { transform: 'translateY(-25%)', opacity: "0" },
+          '100%': { transform: 'translateY(25%)', opacity: "1"},
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "marquee": "marquee 30s linear infinite",
+        "smoothScroll": 'smoothScroll 2.4s ease-in-out infinite',
       },
       maxWidth: {
         'pagewidth': "1200px"
@@ -81,7 +86,13 @@ const config = {
       },
       fontSize: {
         'menu': "11px"
-      }
+      },
+      textOrientation: {
+        'vertical-rl': 'vertical-rl',
+      },
+      writingMode: {
+        'vertical-rl': 'vertical-rl',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

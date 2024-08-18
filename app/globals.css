@@ -78,6 +78,15 @@
   }
 }
 
+@layer utilities {
+  .writing-mode-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+  .text-orientation-vertical-rl {
+    text-orientation: upright;
+  }
+}
+
 .navigation-menu-link-small {
   font-size: 0.9rem;
   letter-spacing: 0.06rem;

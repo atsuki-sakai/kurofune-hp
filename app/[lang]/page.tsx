@@ -16,6 +16,7 @@ export default async function Home({
 
   return (
     <>
+      {/* TopContent */}
       <div className="relative w-full h-full bg-gradient-to-b from-[#96ebf1] to-[#048451]  dark:bg-gradient-to-b dark:from-[#03311f] dark:to-[#3b5e60]">
         <div className="flex justify-center items-center blur-sm">
           <ResponsiveImage
@@ -41,15 +42,23 @@ export default async function Home({
               条件だけでは動かない優秀な人材にアプローチ。
               条件や知名度、採用予算に左右されない採用を実現します。
             </p>
-            <div className="flex justify-around mt-4 gap-10">
-              <Button className="w-full">資料を請求する</Button>
-              <Button className="w-full" variant="outline">
-                料金表を見る
-              </Button>
+            <div className="flex justify-center items-center w-full">
+              <div className="w-full md:flex justify-around mt-4 gap-10">
+                <Button className="w-full">資料を請求する</Button>
+                <Button className="w-full mt-4 md:mt-0" variant="outline">
+                  料金表を見る
+                </Button>
+              </div>
+              <div className="w-fit p-2 mt-4 border-l ml-4">
+                <span className="writing-mode-vertical-rl tracking-[3px] font-extralight text-[10px] flex justify-center items-center animate-smoothScroll">
+                  SCROLL →
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      {/* Marquee */}
       <div className="overflow-hidden whitespace-nowrap">
         <Marquee speed={30}>
           <Image
@@ -103,6 +112,27 @@ export default async function Home({
           />
         </Marquee>
       </div>
+      {/* Service Menu */}
+      <div className="relative h-[150px] overflow-hidden m-4 rounded-md shadow-md">
+        <div className="absolute top-0 left-0 w-full ">
+          <Image
+            src={"/assets/images/whats-96fune.jpg"}
+            className="object-cover w-full h-auto blur-[1px] "
+            width={1920}
+            height={1080}
+            alt=""
+          />
+          <div className="absolute inset-0 bg-black opacity-30"></div>
+        </div>
+        <div className="absolute top-0 bottom-0 left-0 w-full h-full z-10 ">
+          <div className="flex justify-center items-center h-full w-full">
+            <p className="text-white tracking-widest font-bold text-lg">
+              なぜKUROFUNEが良いのか？
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="relative"></div>
     </>
   );
 }
