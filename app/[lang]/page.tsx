@@ -11,8 +11,8 @@ export default async function Home({
 }) {
   const { t } = await useTranslation(lang, "common");
 
-  const desktopImage = "/assets/images/akusyu-pc.png";
-  const spImage = "/assets/images/akusyu-sp.png";
+  const desktopImage = "/assets/images/akusyu-pc.jpg";
+  const spImage = "/assets/images/akusyu-sp.jpg";
   return (
     <>
       {/* TopContent */}
@@ -28,7 +28,6 @@ export default async function Home({
               pc: { width: 1920, height: 1080 },
             }}
           />
-
           <div className={`relative w-full h-auto`}>
             <Image
               className={`object-cover w-full h-auto max-h-[700px]`}
