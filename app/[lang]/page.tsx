@@ -11,9 +11,8 @@ export default async function Home({
 }) {
   const { t } = await useTranslation(lang, "common");
 
-  const desktopImage = "/akusyu-pc.png"; // public/images/akusyu-pc.pngに移動
-  const spImage = "/akusyu-sp.png"; // public/images/akusyu-sp.pngに移動
-
+  const desktopImage = "/assets/images/akusyu-pc.png";
+  const spImage = "/assets/images/akusyu-sp.png";
   return (
     <>
       {/* TopContent */}
@@ -29,6 +28,16 @@ export default async function Home({
               pc: { width: 1920, height: 1080 },
             }}
           />
+
+          <div className={`relative w-full h-auto`}>
+            <Image
+              className={`object-cover w-full h-auto max-h-[700px]`}
+              src={desktopImage}
+              alt={"hello"}
+              width={1920}
+              height={1080}
+            />
+          </div>
         </div>
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute bottom-0 left-0 p-4 md:p-6 bg-white/30 dark:bg-black/30 w-full md:w-1/2 md:ml-10 md:mb-12 md:rounded-lg md:shadow-lg">
