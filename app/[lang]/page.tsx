@@ -11,8 +11,8 @@ export default async function Home({
 }) {
   const { t } = await useTranslation(lang, "common");
 
-  const desktopImage = "/assets/images/akusyu-pc.png";
-  const spImage = "/assets/images/akusyu-sp.png";
+  const desktopImage = "/akusyu-pc.png"; // public/images/akusyu-pc.pngに移動
+  const spImage = "/akusyu-sp.png"; // public/images/akusyu-sp.pngに移動
 
   return (
     <>
