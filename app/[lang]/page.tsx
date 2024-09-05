@@ -19,7 +19,7 @@ export default async function Home({
       {/* TopContent */}
       <div className="relative w-full h-full bg-gradient-to-b from-[#96ebf1] to-[#048451]  dark:bg-gradient-to-b dark:from-[#03311f] dark:to-[#3b5e60]">
         <div className="flex justify-center items-center blur-sm">
-          {/* <ResponsiveImage
+          <ResponsiveImage
             spImage={spImage}
             pcImage={desktopImage}
             alt="Top Image"
@@ -28,8 +28,7 @@ export default async function Home({
               sp: { width: 500, height: 700 },
               pc: { width: 1920, height: 1080 },
             }}
-          /> */}
-          <Image src={desktopImage} width={1920} height={1080} alt="image" />
+          />
         </div>
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute bottom-0 left-0 p-4 md:p-6 bg-white/30 dark:bg-black/30 w-full md:w-1/2 md:ml-10 md:mb-12 md:rounded-lg md:shadow-lg">
