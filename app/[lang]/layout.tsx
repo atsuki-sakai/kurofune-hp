@@ -43,7 +43,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header lang={lang} />
-          <main className="">{children}</main>
+          <main className="overflow-hidden">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
