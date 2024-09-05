@@ -35,23 +35,23 @@ const ResponsiveImage = ({
   const [isDesktop, setIsDesktop] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    const checkIsDesktop = () => {
-      const isDesktop = window.innerWidth > (borderPx ?? defaultBorderPx);
-      setIsDesktop(isDesktop);
-    };
+  // useEffect(() => {
+  //   const checkIsDesktop = () => {
+  //     const isDesktop = window.innerWidth > (borderPx ?? defaultBorderPx);
+  //     setIsDesktop(isDesktop);
+  //   };
 
-    checkIsDesktop();
+  //   checkIsDesktop();
 
-    window.addEventListener("resize", checkIsDesktop);
+  //   window.addEventListener("resize", checkIsDesktop);
 
-    return () => {
-      window.removeEventListener("resize", checkIsDesktop);
-      setMounted(true);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", checkIsDesktop);
+  //     setMounted(true);
+  //   };
+  // }, []);
 
-  if (!mounted) return null;
+  // if (!mounted) return null;
 
   return (
     <div className={`relative w-full h-auto ${className}`}>
