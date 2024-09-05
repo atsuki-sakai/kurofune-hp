@@ -11,6 +11,7 @@ export default async function Home({
 }) {
   const { t } = await useTranslation(lang, "common");
 
+  // jpgでないとデプロイした際に表示されない。
   const desktopImage = "/assets/images/akusyu-pc.jpg";
   const spImage = "/assets/images/akusyu-sp.jpg";
   return (
@@ -58,7 +59,7 @@ export default async function Home({
         </div>
       </div>
       {/* Marquee */}
-      <div className="overflow-hidden whitespace-nowrap">
+      <div className="overflow-hidden whitespace-nowrap my-3">
         <Marquee speed={30}>
           <Image
             className="py-1 px-2"
