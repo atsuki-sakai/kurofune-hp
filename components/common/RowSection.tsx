@@ -42,10 +42,12 @@ const RowSection = ({
             </p>
           </div>
         </div>
-        <p className="text-3xl font-bold">{heading}</p>
-        <span className="block py-5">{desc}</span>
+        <p className="text-3xl md:text-5xl font-bold">{heading}</p>
+        <span className="block py-5 text-sm md:text-base">{desc}</span>
         {subText && <span className="block py-5">{subText}</span>}
-        <Button className="mt-8 px-12 rounded-full">{btnLabel}</Button>
+        <Button className="mt-8 px-12 py-6 rounded-full text-base md:text-xl tracking-widest">
+          {btnLabel}
+        </Button>
       </div>
       <div className="shadow-sm">
         <Image

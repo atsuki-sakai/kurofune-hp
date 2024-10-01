@@ -1,0 +1,1 @@
+export type AnimationType = "fade-in" | "slide-up" | "slide-down" | "slide-left" | "slide-right";

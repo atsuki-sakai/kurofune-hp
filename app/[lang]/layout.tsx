@@ -44,7 +44,7 @@ export default function RootLayout({
         >
           <Header lang={lang} />
           <main className="overflow-hidden">{children}</main>
-          <Footer />
+          <Footer lang={lang} />
         </ThemeProvider>
       </body>
     </html>

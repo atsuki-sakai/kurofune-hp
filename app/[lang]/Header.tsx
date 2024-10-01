@@ -13,8 +13,8 @@ type Props = {
 
 const Header = async ({ lang }: Props) => {
   return (
-    <header className="flex items-center p-2 fixed top-0 left-0 z-50 w-full h-[--header-height] shadow-sm bg-[--bg-color]">
-      <div className="flex w-full h-auto items-center justify-between max-w-pagewidth mx-auto">
+    <header className="flex items-center p-2 fixed top-0 left-0 z-50 w-full h-[var(--header-height)] bg-white md:bg-transparent">
+      <div className="flex w-full h-auto items-center justify-between max-w-pagewidth mx-auto md:bg-white md:px-8 md:py-1.5 md:rounded-full md:shadow-md">
         <Link href={`/${lang}`} className="block">
           <div className="flex items-center gap-2">
             <Logo />
