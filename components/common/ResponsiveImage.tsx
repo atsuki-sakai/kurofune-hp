@@ -49,7 +49,7 @@ const ResponsiveImage = ({
       window.removeEventListener("resize", checkIsDesktop);
       setMounted(true);
     };
-  }, [isDesktop]);
+  }, [isDesktop, borderPx]);
 
   if (!mounted) return null;
 

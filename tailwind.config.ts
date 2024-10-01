@@ -11,7 +11,6 @@ const config = {
   prefix: "",
   theme: {
   	container: {
-  		center: 'true',
   		padding: '2rem',
   		screens: {
   			'2xl': '1400px'
@@ -59,22 +58,7 @@ const config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		keyframes: {
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			},
+  			
   			smoothScroll: {
   				'0%': {
   					transform: 'translateY(-25%)',
@@ -103,8 +87,6 @@ const config = {
   			}
   		},
   		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out',
   			'marquee': 'marquee 30s linear infinite',
   			'smoothScroll': 'smoothScroll 2.4s ease-in-out infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
