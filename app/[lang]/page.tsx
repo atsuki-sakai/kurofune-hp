@@ -27,7 +27,8 @@ export default async function Home({
           World
         </div>
 
-        <div className="flex justify-center items-center blur-sm">
+        {/* blur-smクラスを削除し、z-indexを追加 */}
+        <div className="flex justify-end items-center blur-sm relative">
           <ResponsiveImage
             spImage={spImage}
             pcImage={desktopImage}
@@ -39,7 +40,6 @@ export default async function Home({
             }}
           />
         </div>
-
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute bottom-0 left-0 p-4 md:p-6 bg-white/30 dark:bg-black/30 w-full md:w-1/2 md:ml-10 md:mb-12 md:rounded-lg md:shadow-lg">
             <h3 className="text-3xl md:text-4xl  tracking-widest text-black dark:text-white">

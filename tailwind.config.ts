@@ -11,6 +11,7 @@ const config = {
   prefix: "",
   theme: {
   	container: {
+		center: true,
   		padding: '2rem',
   		screens: {
   			'2xl': '1400px'
@@ -58,7 +59,6 @@ const config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		keyframes: {
-  			
   			smoothScroll: {
   				'0%': {
   					transform: 'translateY(-25%)',

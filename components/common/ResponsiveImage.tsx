@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
 type ResponsiveSize = {
   sp: {
@@ -26,53 +27,39 @@ const ResponsiveImage = ({
   spImage: string;
   pcImage: string;
   alt: string;
+  responsiveSize: ResponsiveSize;
   borderPx?: number;
-  responsiveSize?: ResponsiveSize;
   className?: string;
   maxHeight?: number;
 }) => {
   const defaultBorderPx = 750;
-  const [isDesktop, setIsDesktop] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const isDesktop = useMediaQuery({ minWidth: borderPx ?? defaultBorderPx });
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const checkIsDesktop = () => {
-      const isDesktop = window.innerWidth > (borderPx ?? defaultBorderPx);
-      setIsDesktop(isDesktop);
-    };
+    setIsMounted(true);
+  }, []);
 
-    checkIsDesktop();
+  const imageSrc = isMounted ? (isDesktop ? pcImage : spImage) : null;
+  const imageSize = isMounted
+    ? isDesktop
+      ? responsiveSize.pc
+      : responsiveSize.sp
+    : { width: 1, height: 1 };
 
-    window.addEventListener("resize", checkIsDesktop);
-
-    return () => {
-      window.removeEventListener("resize", checkIsDesktop);
-      setMounted(true);
-    };
-  }, [isDesktop, borderPx]);
-
-  if (!mounted) return null;
+  if (!isMounted) {
+    return null;
+  }
 
   return (
-    <div className={`relative w-full h-auto ${className}`}>
-      <Image
-        className={`object-cover w-full h-auto ${
-          maxHeight ? `max-h-[${maxHeight}px]` : ""
-        }`}
-        src={isDesktop ? pcImage : spImage}
-        alt={alt}
-        width={
-          isDesktop
-            ? responsiveSize?.pc.width ?? 1920
-            : responsiveSize?.sp.width ?? 300
-        }
-        height={
-          isDesktop
-            ? responsiveSize?.pc.height ?? 1080
-            : responsiveSize?.sp.height ?? 500
-        }
-      />
-    </div>
+    <Image
+      className={`${className} ${"min-h-screen"}`}
+      src={imageSrc || spImage}
+      alt={alt}
+      width={imageSize.width}
+      height={imageSize.height}
+      style={{ maxHeight: maxHeight }}
+    />
   );
 };
 
