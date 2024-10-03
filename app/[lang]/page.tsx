@@ -20,11 +20,13 @@ export default async function Home({
   return (
     <>
       {/* TopContent */}
-      <div className="relative w-full h-full overflow-hidden bg-gradient-to-b from-[#96ebf1] to-[#048451]  dark:bg-gradient-to-b dark:from-[#03311f] dark:to-[#3b5e60]">
+      <div className="relative w-full h-full overflow-hidden bg-gradient-to-b from-[#96aaf1] to-[#364076]  dark:bg-gradient-to-b dark:from-[#0a0f31] dark:to-[#455079]">
         <div className="absolute top-0 left-1/6 w-full h-full text-white rotate-45 opacity-10 text-[22rem] tracking-[1rem] font-bold  flex justify-center items-center animate-pulse">
-          HELL
+          HELLO
           <br />
-          World
+          PROGRAMING
+          <br />
+          WORLD
         </div>
 
         {/* blur-smクラスを削除し、z-indexを追加 */}
@@ -40,8 +42,8 @@ export default async function Home({
             }}
           />
         </div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute bottom-0 left-0 p-4 md:p-6 bg-white/30 dark:bg-black/30 w-full md:w-1/2 md:ml-10 md:mb-12 md:rounded-lg md:shadow-lg">
+        <div className="absolute top-0 left-0 right-0 w-full max-w-pagewidth mx-auto  h-full ">
+          <div className="absolute bottom-0 left-0 p-4 md:p-6 bg-white/30 dark:bg-black/30 w-full md:w-3/4 md:ml-10 md:mb-12 md:rounded-lg md:shadow-lg">
             <h3 className="text-3xl md:text-4xl  tracking-widest text-black dark:text-white">
               <strong className="text-5xl md:text-7xl">想い</strong>を
               <strong className="text-5xl md:text-7xl">採用</strong>の
@@ -54,11 +56,10 @@ export default async function Home({
             </p>
             <div className="flex justify-center items-center w-full">
               <div className="w-full md:flex justify-around mt-4 gap-10">
-                <Button className="w-full md:text-base">資料を請求する</Button>
-                <Button
-                  className="w-full mt-4 md:mt-0 md:text-base font-bold"
-                  variant="outline"
-                >
+                <Button className="w-full md:text-base font-bold">
+                  資料を請求する
+                </Button>
+                <Button className="w-full mt-4 md:mt-0 md:text-base font-bold dark:bg-indigo-900 dark:text-white">
                   料金表を見る
                 </Button>
               </div>
@@ -73,82 +74,127 @@ export default async function Home({
       </div>
       {/* Service Menu */}
       <Animation>
-        <div className="relative min-h-[170px] md:min-h-[350px] overflow-hidden my-8 md:my-12 mx-5 rounded-md shadow-md">
-          <div className="absolute top-0 left-0 w-full ">
-            <Image
-              src={"/assets/images/whats-96fune.jpg"}
-              className="object-cover w-full h-auto blur-[1px] "
-              width={1920}
-              height={1080}
-              alt=""
-            />
-            <div className="absolute inset-0 bg-black opacity-40"></div>
-          </div>
-          <div className="absolute top-0 bottom-0 left-0 w-full h-full z-10 ">
-            <div className="flex justify-center items-center h-full w-full">
-              <p className="block text-white tracking-widest font-bold text-xl md:text-5xl">
-                なぜKUROFUNEが良いのか？
-              </p>
+        <div className="w-full h-full max-w-pagewidth mx-auto">
+          <div className="relative min-h-[170px] md:min-h-[350px] overflow-hidden my-8 md:my-12 mx-5 rounded-md shadow-md">
+            <div className="absolute top-0 left-0 w-full ">
+              <Image
+                src={"/assets/images/whats-96fune.jpg"}
+                className="object-cover w-full h-auto blur-[1px] "
+                width={1920}
+                height={1080}
+                alt=""
+              />
+              <div className="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+            <div className="absolute top-0 bottom-0 left-0 w-full h-full z-10 ">
+              <div className="flex justify-center items-center h-full w-full">
+                <p className="block text-white tracking-widest font-bold text-xl md:text-5xl">
+                  なぜKUROFUNEが良いのか？
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </Animation>
       {/* Marquee */}
       <Animation>
-        <div className="overflow-hidden whitespace-nowrap my-8">
-          <Marquee speed={30}>
-            <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
-              <Image
-                className="w-full h-auto object-cover"
-                src="https://via.placeholder.com/320x120"
-                alt="Brand"
-                width={320}
-                height={120}
-              />
+        <div className="w-full h-full  relative">
+          <div className="overflow-hidden whitespace-nowrap my-8">
+            {/* Left blur overlay */}
+            <div className="absolute left-0 top-0 bottom-0 w-6 md:w-24 z-10">
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent opacity-100"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent dark:from-gray-900 dark:to-transparent opacity-70"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent dark:from-gray-900 dark:to-transparent opacity-40"></div>
             </div>
-            <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
-              <Image
-                className="w-full h-auto object-cover"
-                src="https://via.placeholder.com/320x120"
-                alt="Brand"
-                width={320}
-                height={120}
-              />
+
+            <Marquee speed={30}>
+              <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
+                <Image
+                  className="w-full h-auto object-cover"
+                  src="https://via.placeholder.com/320x120"
+                  alt="Brand"
+                  width={320}
+                  height={120}
+                />
+              </div>
+              <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
+                <Image
+                  className="w-full h-auto object-cover"
+                  src="https://via.placeholder.com/320x120"
+                  alt="Brand"
+                  width={320}
+                  height={120}
+                />
+              </div>
+              <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
+                <Image
+                  className="w-full h-auto object-cover"
+                  src="https://via.placeholder.com/320x120"
+                  alt="Brand"
+                  width={320}
+                  height={120}
+                />
+              </div>
+              <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
+                <Image
+                  className="w-full h-auto object-cover"
+                  src="https://via.placeholder.com/320x120"
+                  alt="Brand"
+                  width={320}
+                  height={120}
+                />
+              </div>
+              <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
+                <Image
+                  className="w-full h-auto object-cover"
+                  src="https://via.placeholder.com/320x120"
+                  alt="Brand"
+                  width={320}
+                  height={120}
+                />
+              </div>
+              <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
+                <Image
+                  className="w-full h-auto object-cover"
+                  src="https://via.placeholder.com/320x120"
+                  alt="Brand"
+                  width={320}
+                  height={120}
+                />
+              </div>
+              <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
+                <Image
+                  className="w-full h-auto object-cover"
+                  src="https://via.placeholder.com/320x120"
+                  alt="Brand"
+                  width={320}
+                  height={120}
+                />
+              </div>
+              <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
+                <Image
+                  className="w-full h-auto object-cover"
+                  src="https://via.placeholder.com/320x120"
+                  alt="Brand"
+                  width={320}
+                  height={120}
+                />
+              </div>
+            </Marquee>
+
+            {/* Right blur overlay */}
+            <div className="absolute right-0 top-0 bottom-0 w-6 md:w-24 z-10">
+              <div className="absolute inset-0 bg-gradient-to-l from-white via-white to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent opacity-100"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-white to-transparent dark:from-gray-900 dark:to-transparent opacity-70"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-white to-transparent dark:from-gray-900 dark:to-transparent opacity-40"></div>
             </div>
-            <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
-              <Image
-                className="w-full h-auto object-cover"
-                src="https://via.placeholder.com/320x120"
-                alt="Brand"
-                width={320}
-                height={120}
-              />
-            </div>
-            <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
-              <Image
-                className="w-full h-auto object-cover"
-                src="https://via.placeholder.com/320x120"
-                alt="Brand"
-                width={320}
-                height={120}
-              />
-            </div>
-            <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
-              <Image
-                className="w-full h-auto object-cover"
-                src="https://via.placeholder.com/320x120"
-                alt="Brand"
-                width={320}
-                height={120}
-              />
-            </div>
-          </Marquee>
+          </div>
         </div>
       </Animation>
       {/* Service Content - 1 */}
       <Animation>
-        <div className="bg-gray-100">
-          <div className="relative w-full py-8 md:py-12  max-w-[1200px] m-auto md:flex md:justify-center md:items-center md:gap-5 md:p-5">
+        <div className="">
+          <div className="relative w-full py-8 md:py-12  max-w-pagewidth mx-auto md:flex md:justify-center md:items-center md:gap-5 md:p-5">
             <div className="md:w-[50%]">
               <Image
                 src={"https://via.placeholder.com/1920x1080"}
@@ -215,8 +261,8 @@ export default async function Home({
 
       {/* Service Card */}
       <Animation animationType={"slide-up"}>
-        <div className="relative pt-6 pb-14 px-5 w-full max-w-[1200px] m-auto">
-          <div className="w-full bg-blue-400 py-6  px-3 rounded-xl shadow-md text-white md:flex md:justify-around md:items-center">
+        <div className="relative pt-6 pb-14 px-5 w-full max-w-pagewidth m-auto">
+          <div className="w-full bg-indigo-400 dark:bg-indigo-800 py-6  px-3 rounded-xl shadow-md text-white md:flex md:justify-around md:items-center">
             <div className="md:w-[60%]">
               <h3 className="text-2xl md:text-4xl tracking-wider font-bold mb-8 leading-8 whitespace-nowrap">
                 成果報酬なし。
@@ -230,7 +276,7 @@ export default async function Home({
             <div className="md:w-[30%]">
               <Button
                 variant={"outline"}
-                className="bg-transparent w-full rounded-full md:bg-white md:text-gray-500 font-bold md:text-xl tracking-wider"
+                className="bg-transparent w-full h-14 rounded-full md:bg-white md:dark:bg-indigo-950 md:text-gray-500 md:dark:text-white font-bold md:text-xl tracking-wider"
               >
                 料金表を見る
               </Button>
@@ -240,11 +286,11 @@ export default async function Home({
       </Animation>
       {/* Service Menu */}
       <Animation animationType={"slide-up"}>
-        <div className="relative -z-20 bg-gray-50 py-12">
+        <div className="relative -z-20 py-12">
           <div className="w-full max-w-pagewidth m-auto p-5">
             <div className="relative w-full h-auto">
               <div className="absolute top-12 md:top-3 left-0 right-0 -z-10">
-                <p className="text-center text-7xl md:text-9xl md:scale-150 font-bold text-blue-100">
+                <p className="text-center text-7xl md:text-9xl md:scale-150 font-bold text-blue-100 dark:opacity-20">
                   OPTIONS
                 </p>
               </div>

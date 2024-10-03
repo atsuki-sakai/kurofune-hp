@@ -64,9 +64,13 @@ const config = {
   					transform: 'translateY(-25%)',
   					opacity: '0'
   				},
+				'50%': {
+  					transform: 'translateY(0%)',
+  					opacity: '1'
+  				},
   				'100%': {
   					transform: 'translateY(25%)',
-  					opacity: '1'
+  					opacity: '0'
   				}
   			},
   			'accordion-down': {

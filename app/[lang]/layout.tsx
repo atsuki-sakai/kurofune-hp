@@ -21,17 +21,18 @@ export const metadata: Metadata = {
     "KUROFUNEは革新的なWEB・システム開発で企業のデジタル化を加速。越境EC構築、業務改善システム、API開発のエキスパート。グローバルビジネスの成功をテクノロジーでサポートします。",
 };
 
-export default function RootLayout({
-  children,
-  params: { lang },
-}: {
+type LayoutProps = {
   children: React.ReactNode;
-  params: { lang: string };
-}) {
+  params: {
+    lang: string;
+  };
+};
+
+export default function RootLayout({ children, params }: LayoutProps) {
   return (
     <html
-      lang={lang}
-      dir={dir(lang)}
+      lang={params.lang}
+      dir={dir(params.lang)}
       className={inter.className}
       suppressHydrationWarning
     >
@@ -42,9 +43,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header lang={lang} />
+          <Header lang={params.lang} />
           <main className="overflow-hidden">{children}</main>
-          <Footer lang={lang} />
+          <Footer lang={params.lang} />
         </ThemeProvider>
       </body>
     </html>

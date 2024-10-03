@@ -13,8 +13,8 @@ interface AnimationWrapperProps {
 export function AnimationWrapper({
   children,
   animationType = "fade-in",
-  duration = 1500,
-  delay = 0,
+  duration = 3000,
+  delay = 200,
 }: AnimationWrapperProps) {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useTranslation } from "@/app/i18n";
 import Logo from "@/components/common/Logo";
 
 import { FaInstagram, FaFacebook } from "react-icons/fa";
@@ -7,67 +8,88 @@ import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 type Props = {
-  lang?: string;
+  lang: string;
 };
 
-const Footer = ({ lang }: Props) => {
+async function Footer({ lang }: Props) {
+  const { t } = await useTranslation(lang, "common");
+  const components = [
+    {
+      title: t("menu.news"),
+      href: "/docs/primitives/progress",
+      description: t("menu.news_description"),
+    },
+    {
+      title: t("menu.blog"),
+      href: "/docs/primitives/tabs",
+      description: t("menu.blog_description"),
+    },
+    {
+      title: t("menu.company"),
+      href: "/",
+      description: t("menu.company_description"),
+    },
+  ];
+
+  const _buildInfoItem = ({ title, href }: { title: string; href: string }) => {
+    return (
+      <li>
+        <Button variant={"link"} className="p-0 ">
+          <Link href={href} className="tracking-widest font-light">
+            {title}
+          </Link>
+        </Button>
+      </li>
+    );
+  };
+
   return (
-    <footer className="bg-slate-200">
+    <footer className="bg-slate-100 dark:bg-black">
       <div className="max-w-pagewidth mx-auto p-4">
-        <div className="md:flex md:justify-between md:items-center gap-12 mb-5 w-full">
-          <div className="mt-4 space-y-2 w-full">
-            <nav className="">
-              <ul className="mb-8 font-bold tracking-widest">
-                <li className="pb-1 my-2 border-b border-black w-fit">
-                  <Button variant={"ghost"}>
-                    <Link href={"/"}>ホーム</Link>
-                  </Button>
-                </li>
-                <li className="pb-1 my-2 border-b border-black w-fit">
-                  <Button variant={"ghost"}>
-                    <Link href={"/"}>ホーム</Link>
-                  </Button>
-                </li>
-                <li className="pb-1 my-2 border-b border-black w-fit">
-                  <Button variant={"ghost"}>
-                    <Link href={"/"}>ホーム</Link>
-                  </Button>
-                </li>
-                <li className="pb-1 my-2 border-b border-black w-fit">
-                  <Button variant={"ghost"}>
-                    <Link href={"/"}>ホーム</Link>
-                  </Button>
-                </li>
+        <div className="md:flex md:justify-between md:items-start gap-12 pb-5 mb-5 w-full border-b border-slate-300">
+          <div className="mt-5 w-full">
+            <h5 className="text-xl font-bold tracking-widest">INFOMATION</h5>
+            <div className="my-3">
+              <ul className="list-inside">
+                {_buildInfoItem({ title: "HOME", href: "/" })}
+                {_buildInfoItem({ title: "HOME", href: "/" })}
+                {_buildInfoItem({ title: "HOME", href: "/" })}
+                {_buildInfoItem({ title: "HOME", href: "/" })}
+                {_buildInfoItem({ title: "HOME", href: "/" })}
               </ul>
-              <ul className="flex flex-col gap-1.5 tracking-wider text-slate-400 text-sm">
-                <li>
-                  <Link href={"/"}>利用規約</Link>
-                </li>
-                <li>
-                  <Link href={"/"}>プライバシーポリシー</Link>
-                </li>
-              </ul>
-            </nav>
+            </div>
           </div>
-          <div className="mt-5 md:mt-0"></div>
+          <div className="md:mt-5  w-full">
+            <Link
+              href={"/contact"}
+              className="block w-fit mx-auto  my-8 duration-800 animate-pulse "
+            >
+              <span className="block tracking-wider px-8 py-3 rounded-full shadow-sm bg-black text-white dark:bg-indigo-900 dark:text-white transition-all duration-500 hover:-translate-y-1 hover:rotate-1">
+                お問い合わせはこちらから
+              </span>
+            </Link>
+            <div className="w-full h-full relative">
+              <iframe
+                className="object-cover w-full h-full min-h-[250px] md:min-h-[350px]"
+                width={500}
+                height={400}
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1634.049983662737!2d135.12196065603052!3d35.004202604594624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1727897617802!5m2!1sja!2sjp"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
         <div>
           <div className="flex justify-between items-center">
             <div>
-              <Link href={`/${lang ?? ""}`} className="block">
-                <div className="flex items-center gap-2">
-                  <Logo />
-                  <h1 className="text-xl font-semibold tracking-wider">
-                    KUROFUNE
-                  </h1>
-                </div>
-                <p className="text-[7px] bg-slate-100 dark:bg-slate-900 w-fit py-0.5 px-1 rounded-sm">
-                  Bridging Global Tech Solutions
-                </p>
-              </Link>
+              <Logo />
               <div className="mt-4 space-y-2">
                 <p className="text-xs text-slate-500 dark:text-gray-400">
-                  〒150-0002 東京都渋谷区渋谷1-2-3 サンプルビル5階
+                  〒150-0002
+                  <br />
+                  東京都渋谷区渋谷1-2-3 サンプルビル5階
                 </p>
                 <p className="text-xs text-slate-500 dark:text-gray-400">
                   TEL: 03-1234-5678 / FAX: 03-8765-4321
@@ -106,6 +128,7 @@ const Footer = ({ lang }: Props) => {
       </div>
     </footer>
   );
-};
+}
+
 
 export default Footer;

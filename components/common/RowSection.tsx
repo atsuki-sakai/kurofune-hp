@@ -37,7 +37,7 @@ const RowSection = ({
           }`}
         >
           <div className="flex justify-center items-center w-full h-auto translate-x-[25%]">
-            <p className="text-center text-7xl font-extrabold text-blue-100">
+            <p className="text-center text-7xl font-extrabold text-blue-100 dark:opacity-20">
               {bgText}
             </p>
           </div>
@@ -45,7 +45,7 @@ const RowSection = ({
         <p className="text-3xl md:text-5xl font-bold">{heading}</p>
         <span className="block py-5 text-sm md:text-base">{desc}</span>
         {subText && <span className="block py-5">{subText}</span>}
-        <Button className="mt-8 px-12 py-6 rounded-full text-base md:text-xl tracking-widest">
+        <Button className="mt-8 px-12 py-6 rounded-full text-base md:text-xl tracking-widest dark:bg-indigo-900 dark:text-white">
           {btnLabel}
         </Button>
       </div>

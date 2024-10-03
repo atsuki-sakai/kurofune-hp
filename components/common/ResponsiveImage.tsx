@@ -20,14 +20,17 @@ const ResponsiveImage = ({
   pcImage,
   alt,
   borderPx,
-  responsiveSize,
+  responsiveSize = {
+    sp: { width: 500, height: 700 },
+    pc: { width: 1920, height: 1080 },
+  },
   className,
   maxHeight,
 }: {
   spImage: string;
   pcImage: string;
   alt: string;
-  responsiveSize: ResponsiveSize;
+  responsiveSize?: ResponsiveSize;
   borderPx?: number;
   className?: string;
   maxHeight?: number;
@@ -53,7 +56,7 @@ const ResponsiveImage = ({
 
   return (
     <Image
-      className={`${className} ${"min-h-screen"}`}
+      className={`${className} min-h-screen w-full`}
       src={imageSrc || spImage}
       alt={alt}
       width={imageSize.width}

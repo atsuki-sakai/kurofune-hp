@@ -131,7 +131,7 @@ async function NavigationMenuDemo({ lang }: Props) {
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
-                "navigation-menu-link-small tracking-wider font-bold bg-black text-white dark:bg-white dark:text-black"
+                "navigation-menu-link-small tracking-wider font-bold bg-black text-white dark:bg-indigo-900 dark:hover:bg-gray-300 dark:text-white"
               )}
             >
               {t("menu.contact")}
@@ -158,7 +158,7 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
+          <div className="text-sm font-medium leading-none ">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>

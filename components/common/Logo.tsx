@@ -2,9 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useTheme } from "next-themes";
 
-const Logo = () => {
+type Props = {
+  lang?: string;
+};
+
+const Logo = ({ lang }: Props) => {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -14,28 +19,48 @@ const Logo = () => {
 
   if (!mounted) {
     return (
-      <Image
-        src={"/assets/images/logo-black.png"}
-        alt="logo"
-        width={30}
-        height={30}
-      />
-    ); // または、デフォルトのロゴを表示
+      <Link href={`/${lang ?? ""}`} className="block">
+        <div className="flex items-center gap-2">
+          <Image
+            src={"/assets/images/logo-black.jpg"}
+            alt="logo"
+            width={30}
+            height={30}
+          />
+          <h1 className="text-base md:text-xl font-semibold tracking-wider">
+            KUROFUNE
+          </h1>
+        </div>
+        <p className="text-[7px] bg-slate-100 dark:bg-slate-900 w-fit py-0.5 px-1 rounded-sm">
+          Bridging Global Tech Solutions
+        </p>
+      </Link>
+    );
   }
 
   const currentTheme = theme === "system" ? resolvedTheme : theme;
 
   return (
-    <Image
-      src={
-        currentTheme === "dark"
-          ? "/assets/images/logo-white.png"
-          : "/assets/images/logo-black.png"
-      }
-      alt="logo"
-      width={30}
-      height={30}
-    />
+    <Link href={`/${lang ?? ""}`} className="block">
+      <div className="flex items-center gap-2">
+        <Image
+          src={
+            currentTheme === "dark"
+              ? "/assets/images/logo-white.jpg"
+              : "/assets/images/logo-black.jpg"
+          }
+          alt="logo"
+          width={30}
+          height={30}
+        />
+        <h1 className="text-base md:text-xl font-semibold tracking-wider">
+          KUROFUNE
+        </h1>
+      </div>
+      <p className="text-[7px] bg-slate-100 dark:bg-slate-900 w-fit py-0.5 px-1 rounded-sm">
+        Bridging Global Tech Solutions
+      </p>
+    </Link>
   );
 };
 

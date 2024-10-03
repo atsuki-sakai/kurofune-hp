@@ -13,7 +13,7 @@ export function Animation({
   children,
   animationType = "fade-in",
   duration,
-  delay = 100,
+  delay,
 }: AnimationProps) {
   return (
     <AnimationWrapper
