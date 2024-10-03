@@ -3,13 +3,13 @@ const nextConfig = {
     reactStrictMode: true,
     images: {
         domains: ['via.placeholder.com'],
-
     },
-    async rewrites() {
+    async redirects() {
         return [
             {
                 source: '/',
                 destination: '/ja',
+                permanent: false,
             },
         ];
     },
