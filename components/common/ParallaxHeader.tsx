@@ -1,26 +1,28 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 
 interface ParallaxHeaderProps {
-  imageUrl: string;
-  altText: string;
+  backgroundContent: React.ReactNode;
+  height?: "sm" | "md" | "full";
 }
 
 const ParallaxHeader: React.FC<ParallaxHeaderProps> = ({
-  imageUrl,
-  altText,
+  backgroundContent,
+  height = "full",
 }) => {
-  const parallaxRef = useRef<HTMLDivElement>(null);
+  const backgroundRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const parallaxElement = parallaxRef.current;
-    if (!parallaxElement) return;
+    const backgroundElement = backgroundRef.current;
+
+    if (!backgroundElement) return;
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      parallaxElement.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+      const backgroundTranslate = scrollPosition * 0.5;
+
+      backgroundElement.style.transform = `translateY(${backgroundTranslate}px)`;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -29,22 +31,16 @@ const ParallaxHeader: React.FC<ParallaxHeaderProps> = ({
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  var _height = height === "sm" ? "60vh" : height == "md" ? "80vh" : "100vh";
 
   return (
-    <div className={`w-full h-[300px] md:h-[600px] relative overflow-hidden`}>
+    <div className="relative overflow-hidden" style={{ height: `${_height}` }}>
       <div
-        ref={parallaxRef}
+        ref={backgroundRef}
         className="absolute inset-0 will-change-transform"
         style={{ transform: "translateY(0)" }}
       >
-        <Image
-          className="object-cover w-full h-[120%]"
-          src={imageUrl}
-          width={1920}
-          height={1296}
-          alt={altText}
-          priority
-        />
+        {backgroundContent}
       </div>
     </div>
   );

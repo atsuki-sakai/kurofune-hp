@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "./Header";
 import Footer from "./Footer";
 import { languages } from "../i18n/settings";
+import AnimatedLayout from "./AnimatedLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,15 +29,10 @@ type LayoutProps = {
   };
 };
 
-export default function RootLayout({ children, params }: LayoutProps) {
+const RootLayout = ({ children, params }: LayoutProps) => {
   return (
-    <html
-      lang={params.lang}
-      dir={dir(params.lang)}
-      className={inter.className}
-      suppressHydrationWarning
-    >
-      <body>
+    <html lang={params.lang} dir={dir(params.lang)}>
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -44,10 +40,12 @@ export default function RootLayout({ children, params }: LayoutProps) {
           disableTransitionOnChange
         >
           <Header lang={params.lang} />
-          <main className="overflow-hidden">{children}</main>
+          <AnimatedLayout>{children}</AnimatedLayout>
           <Footer lang={params.lang} />
         </ThemeProvider>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

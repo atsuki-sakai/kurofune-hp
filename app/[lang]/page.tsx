@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import ResponsiveImage from "@/components/common/ResponsiveImage";
 import RowSection from "@/components/common/RowSection";
 import { Animation } from "@/components/Animation";
+import ParallaxHeader from "@/components/common/ParallaxHeader";
 
 export default async function Home({
   params: { lang },
@@ -19,61 +20,65 @@ export default async function Home({
   const spImage = "/assets/images/akusyu-sp.jpg";
   return (
     <>
-      {/* TopContent */}
-      <div className="relative w-full h-full overflow-hidden bg-gradient-to-b from-[#96aaf1] to-[#364076]  dark:bg-gradient-to-b dark:from-[#0a0f31] dark:to-[#455079]">
-        <div className="absolute top-0 left-1/6 w-full h-full text-white rotate-45 opacity-10 text-[22rem] tracking-[1rem] font-bold  flex justify-center items-center animate-pulse">
-          HELLO
-          <br />
-          PROGRAMING
-          <br />
-          WORLD
-        </div>
+      {/* TopContent with Parallax ServiceMenu */}
+      <ParallaxHeader
+        backgroundContent={
+          <div className="relative w-full h-full overflow-hidden bg-gradient-to-b from-[#96aaf1] to-[#364076] dark:bg-gradient-to-b dark:from-[#0a0f31] dark:to-[#455079]">
+            <div className="absolute top-0 left-1/6 w-full h-full text-white rotate-45 opacity-10 text-[22rem] tracking-[1rem] font-bold  flex justify-center items-center animate-pulse">
+              HELLO
+              <br />
+              PROGRAMING
+              <br />
+              WORLD
+            </div>
 
-        {/* blur-smクラスを削除し、z-indexを追加 */}
-        <div className="flex justify-end items-center blur-sm relative">
-          <ResponsiveImage
-            spImage={spImage}
-            pcImage={desktopImage}
-            alt="Top Image"
-            maxHeight={700}
-            responsiveSize={{
-              sp: { width: 500, height: 700 },
-              pc: { width: 1920, height: 1080 },
-            }}
-          />
-        </div>
-        <div className="absolute top-0 left-0 right-0 w-full max-w-pagewidth mx-auto  h-full ">
-          <div className="absolute bottom-0 left-0 p-4 md:p-6 bg-white/30 dark:bg-black/30 w-full md:w-3/4 md:ml-10 md:mb-12 md:rounded-lg md:shadow-lg">
-            <h3 className="text-3xl md:text-4xl  tracking-widest text-black dark:text-white">
-              <strong className="text-5xl md:text-7xl">想い</strong>を
-              <strong className="text-5xl md:text-7xl">採用</strong>の
-              <span className="block md:inline">武器にする</span>
-            </h3>
-            <p className="text-xs md:text-base font-semibold tracking-wide text-slate-700 dark:text-gray-400 mt-3">
-              Wantedlyは、あなたの会社が掲げる｢想い｣への共感を通じて、
-              条件だけでは動かない優秀な人材にアプローチ。
-              条件や知名度、採用予算に左右されない採用を実現します。
-            </p>
-            <div className="flex justify-center items-center w-full">
-              <div className="w-full md:flex justify-around mt-4 gap-10">
-                <Button className="w-full md:text-base font-bold">
-                  資料を請求する
-                </Button>
-                <Button className="w-full mt-4 md:mt-0 md:text-base font-bold dark:bg-indigo-900 dark:text-white">
-                  料金表を見る
-                </Button>
-              </div>
-              <div className="w-fit p-2 mt-4 border-l ml-4">
-                <span className="writing-mode-vertical-rl tracking-[3px] font-extralight text-[10px] flex justify-center items-center animate-smoothScroll">
-                  SCROLL →
-                </span>
+            {/* blur-smクラスを削除し、z-indexを追加 */}
+            <div className="flex justify-end items-center blur-sm relative">
+              <ResponsiveImage
+                spImage={spImage}
+                pcImage={desktopImage}
+                alt="Top Image"
+                maxHeight={700}
+                responsiveSize={{
+                  sp: { width: 500, height: 700 },
+                  pc: { width: 1920, height: 1080 },
+                }}
+              />
+            </div>
+            <div className="absolute top-0 left-0 right-0 w-full max-w-pagewidth mx-auto  h-full ">
+              <div className="absolute bottom-0 left-0 p-4 md:p-6 bg-white/30 dark:bg-black/30 w-full md:w-3/4 md:ml-10 md:mb-12 md:rounded-lg md:shadow-lg">
+                <h3 className="text-3xl md:text-4xl  tracking-widest text-black dark:text-white">
+                  <strong className="text-5xl md:text-7xl">想い</strong>を
+                  <strong className="text-5xl md:text-7xl">採用</strong>の
+                  <span className="block md:inline">武器にする</span>
+                </h3>
+                <p className="text-xs md:text-base font-semibold tracking-wide text-slate-700 dark:text-gray-400 mt-3">
+                  Wantedlyは、あなたの会社が掲げる｢想い｣への共感を通じて、
+                  条件だけでは動かない優秀な人材にアプローチ。
+                  条件や知名度、採用予算に左右されない採用を実現します。
+                </p>
+                <div className="flex justify-center items-center w-full">
+                  <div className="w-full md:flex justify-around mt-4 gap-10">
+                    <Button className="w-full md:text-base font-bold">
+                      資料を請求する
+                    </Button>
+                    <Button className="w-full mt-4 md:mt-0 md:text-base font-bold dark:bg-indigo-900 dark:text-white">
+                      料金表を見る
+                    </Button>
+                  </div>
+                  <div className="w-fit p-2 mt-4 border-l ml-4">
+                    <span className="writing-mode-vertical-rl tracking-[3px] font-extralight text-[10px] flex justify-center items-center animate-smoothScroll">
+                      SCROLL →
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      {/* Service Menu */}
-      <Animation>
+        }
+      />
+      {/* バナー */}
+      <Animation animationType={"slide-up"}>
         <div className="w-full h-full max-w-pagewidth mx-auto">
           <div className="relative min-h-[170px] md:min-h-[350px] overflow-hidden my-8 md:my-12 mx-5 rounded-md shadow-md">
             <div className="absolute top-0 left-0 w-full ">
@@ -96,17 +101,11 @@ export default async function Home({
           </div>
         </div>
       </Animation>
+
       {/* Marquee */}
       <Animation>
         <div className="w-full h-full  relative">
           <div className="overflow-hidden whitespace-nowrap my-8">
-            {/* Left blur overlay */}
-            <div className="absolute left-0 top-0 bottom-0 w-6 md:w-24 z-10">
-              <div className="absolute inset-0 bg-gradient-to-r from-white via-white to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent opacity-100"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent dark:from-gray-900 dark:to-transparent opacity-70"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent dark:from-gray-900 dark:to-transparent opacity-40"></div>
-            </div>
-
             <Marquee speed={30}>
               <div className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4">
                 <Image
@@ -181,13 +180,6 @@ export default async function Home({
                 />
               </div>
             </Marquee>
-
-            {/* Right blur overlay */}
-            <div className="absolute right-0 top-0 bottom-0 w-6 md:w-24 z-10">
-              <div className="absolute inset-0 bg-gradient-to-l from-white via-white to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent opacity-100"></div>
-              <div className="absolute inset-0 bg-gradient-to-l from-white to-transparent dark:from-gray-900 dark:to-transparent opacity-70"></div>
-              <div className="absolute inset-0 bg-gradient-to-l from-white to-transparent dark:from-gray-900 dark:to-transparent opacity-40"></div>
-            </div>
           </div>
         </div>
       </Animation>

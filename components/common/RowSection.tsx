@@ -26,7 +26,7 @@ const RowSection = ({
 }: RowSectionProps) => {
   return (
     <div
-      className={`w-full max-w-pagewidth m-auto px-5 py-14  md:flex md:justify-center md:items-center md:gap-8 ${
+      className={`w-full max-w-pagewidth m-auto px-5 py-14  md:flex md:justify-center md:items-center md:gap-8 overflow-hidden ${
         flexReverse ? "md:flex-row-reverse" : ""
       }`}
     >

@@ -31,7 +31,7 @@ const Logo = ({ lang }: Props) => {
             KUROFUNE
           </h1>
         </div>
-        <p className="text-[7px] bg-slate-100 dark:bg-slate-900 w-fit py-0.5 px-1 rounded-sm">
+        <p className="text-[7px] w-fit py-0.5 px-1 rounded-sm">
           Bridging Global Tech Solutions
         </p>
       </Link>
@@ -57,7 +57,7 @@ const Logo = ({ lang }: Props) => {
           KUROFUNE
         </h1>
       </div>
-      <p className="text-[7px] bg-slate-100 dark:bg-slate-900 w-fit py-0.5 px-1 rounded-sm">
+      <p className="text-[7px] w-fit py-0.5 px-1 rounded-sm">
         Bridging Global Tech Solutions
       </p>
     </Link>
