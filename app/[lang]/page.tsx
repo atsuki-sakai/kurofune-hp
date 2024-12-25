@@ -60,30 +60,7 @@ export default async function Home({
             </div>
             <div className="absolute top-0 left-0 right-0 w-full  mx-auto  h-full ">
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 p-4 md:p-6 bg-white/30 dark:bg-black/30 w-full md:w-3/4 md:mb-12 md:rounded-lg md:shadow-lg">
-                {/* <h3 className="text-3xl md:text-4xl  tracking-widest text-black dark:text-white">
-                  <strong className="text-5xl md:text-5xl">
-                    {t("home.hero.title")}
-                  </strong>
-                </h3>
-                <p className="text-xs md:text-sm font-semibold tracking-wide text-slate-700 dark:text-gray-400 mt-3">
-                  {t("home.hero.description")}
-                </p>
-                <div className="flex justify-center items-center w-full">
-                  <div className="w-full md:flex justify-around mt-4 gap-10">
-                    <Button className="w-full md:text-base font-bold">
-                      {t("home.hero.request_docs")}
-                    </Button>
-                    <Button className="w-full mt-4 md:mt-0 md:text-base font-bold dark:bg-indigo-900 dark:text-white">
-                      {t("home.hero.view_pricing")}
-                    </Button>
-                  </div>
-                  <div className="w-fit p-2 mt-4 border-l ml-4">
-                    <span className="writing-mode-vertical-rl tracking-[3px] font-extralight text-[10px] flex justify-center items-center animate-smoothScroll">
-                      {t("home.hero.scroll")} →
-                    </span>
-                  </div>
-                </div> */}
-                <div className="relative isolate px-6 pt-14 lg:px-8">
+                <div className="relative isolate px-6 pt-14 lg:px-4">
                   <div
                     aria-hidden="true"
                     className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -96,7 +73,7 @@ export default async function Home({
                       className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                     />
                   </div>
-                  <div className="mx-auto max-w-2xl lg:py-12">
+                  <div className="mx-auto w-full max-w-5xl lg:py-12">
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                       <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                         Announcing our next round of funding.{" "}
@@ -110,7 +87,7 @@ export default async function Home({
                       </div>
                     </div>
                     <div className="text-center">
-                      <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+                      <h1 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
                         {t("home.hero.title")}
                       </h1>
                       <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
