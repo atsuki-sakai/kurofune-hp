@@ -1,9 +1,52 @@
 {
   "home": {
-    "text-1": "fdafdfsadfdfdsa",
-    "text-2": "fdfasdfsadfa"
+    "text-1": "Hello",
+    "text-2": "fdfasdfsadfa",
+    "hero": {
+      "title": "Turn Your Vision into a Recruitment Asset",
+      "description": "Through Wantedly, connect with talented professionals who resonate with your company's vision. We help you achieve recruitment success beyond just conditions and budgets.",
+      "request_docs": "Request Documents",
+      "view_pricing": "View Pricing",
+      "scroll": "SCROLL"
+    },
+    "whyus": {
+      "title": "Why Choose KUROFUNE?"
+    },
+    "talent": {
+      "title": "4 Million Talented Professionals\nAwaiting Companies\nThat Share Their Values",
+      "description": "Wantedly attracts users from various fields who seek work based on shared values. Find truly matching talent by communicating your work's purpose and social significance."
+    },
+    "vision": {
+      "title": "Your Company's Vision,\nVisible and Resonant.",
+      "subtitle": "We provide comprehensive tools\nto convey your unique company appeal."
+    },
+    "recruitment": {
+      "title": "Unlimited Job Postings",
+      "description": "Post unlimited positions across all job types, from internships to mid-career roles. Our easy-to-use format helps you effectively communicate your company's vision.",
+      "button": "Start Recruiting",
+      "subtext": "New Graduates・Internships / Mid-Career・Side Jobs / All Positions"
+    },
+    "pricing": {
+      "title": "No Success Fees.\nKeep Your Recruitment Costs Low.",
+      "description": "Wantedly uses a fixed monthly pricing model without success fees, allowing you to optimize your recruitment strategy while keeping costs predictable.",
+      "button": "View Pricing"
+    },
+    "options": {
+      "title": "Customizable to Your Recruitment Needs",
+      "button": "About Options"
+    },
+    "background_text": {
+      "hello": "HELLO",
+      "programming": "PROGRAMMING",
+      "world": "WORLD",
+      "options": "OPTIONS"
+    },
+    "row_section": {
+      "bg_text_1": "Hello World World",
+      "bg_text_2": "Hello World"
+    }
   },
-    "menu": {
+  "menu": {
     "title": "Menu",
     "about": "About Us",
     "service": "Our Services",
@@ -18,7 +61,7 @@
     "service_title": "Our Services",
     "service_description": "We offer a wide range of services including:",
     "recruit_title": "Careers",
-    "recruit_description": "We offer a wide range of career opportunities.",
+    "recruit_description": "Explore exciting career opportunities with us.",
     "news_title": "News",
     "news_description": "Stay updated with our latest news and announcements.",
     "company_title": "Company Information",
@@ -39,6 +82,43 @@
     "shopify-api_description": "Improve your back-office operations using Shopify API and take your e-commerce to the next level.",
     "business-improvement_title": "Business Process Improvement Systems",
     "business-improvement_description": "We develop programs to automate your daily operations. Tell us which processes you'd like to improve.",
-    "othermenu": "Other"
+    "othermenu": "Other",
+    "business_hours": "Business Hours - 10:00～17:00"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Please fill out the form below.",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "email": "Email",
+    "company": "Company",
+    "phone": "Phone",
+    "budget": "Budget",
+    "budget_options": {
+      "under_25k": "Under $25k",
+      "25k-50k": "$25k – $50k",
+      "50k-100k": "$50k – $100k",
+      "over_100k": "$100k+"
+    },
+    "name": "Name",
+    "name_placeholder": "John Doe",
+    "email_placeholder": "your-email@example.com",
+    "company_placeholder": "Company name (optional)",
+    "category": "Category",
+    "category_placeholder": "Select a category",
+    "category_general": "General",
+    "category_support": "Support",
+    "category_sales": "Sales",
+    "category_other": "Other",
+    "site_url": "Site URL",
+    "site_url_placeholder": "https://test.myshopify.com",
+    "collaborator_code": "Collaborator Code",
+    "collaborator_code_placeholder": "8931",
+    "message": "Message",
+    "message_placeholder": "Please enter your message",
+    "sending": "Sending...",
+    "send": "Send Message",
+    "success_message": "Thank you for your message. We'll get back to you soon!",
+    "error_message": "An error occurred. Please try again later."
   }
 }

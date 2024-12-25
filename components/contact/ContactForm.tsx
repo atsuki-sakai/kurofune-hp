@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "../ui/label";
+import { useTranslation } from "react-i18next";
 
 const formSchema = z.object({
   name: z.string().min(2),
@@ -39,7 +40,8 @@ const validateForm = async (formData: FormData) => {
   return { success: true, data: result.data };
 };
 
-const ContactForm = () => {
+const ContactForm = ({ lang }: { lang: string }) => {
+  const { t } = useTranslation("common");
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -99,21 +101,24 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
-        <Label className="block text-xs mb-2">お名前</Label>
-        <Input {...register("name")} placeholder="Name" />
+        <Label className="block text-xs mb-2">{t("contact.name")}</Label>
+        <Input
+          {...register("name")}
+          placeholder={t("contact.name_placeholder")}
+        />
         {errors.name && <p className="text-red-500">{errors.name.message}</p>}
       </div>
       <div>
-        <Label className="block text-xs mb-2">メールアドレス</Label>
+        <Label className="block text-xs mb-2">{t("contact.email")}</Label>
         <Input {...register("email")} placeholder="Email" type="email" />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       </div>
       <div>
-        <Label className="block text-xs mb-2">会社名</Label>
+        <Label className="block text-xs mb-2">{t("contact.company")}</Label>
         <Input {...register("company")} placeholder="Company (optional)" />
       </div>
       <div>
-        <Label className="block text-xs mb-2">お問い合わせカテゴリ</Label>
+        <Label className="block text-xs mb-2">{t("contact.category")}</Label>
         <Select
           onValueChange={(value) => {
             register("category").onChange({
@@ -138,7 +143,7 @@ const ContactForm = () => {
 
       <div>
         <div>
-          <Label className="block text-xs mb-2">サイトURL</Label>
+          <Label className="block text-xs mb-2">{t("contact.siteUrl")}</Label>
           <Input
             {...register("siteUrl")}
             placeholder="https://test.myshopify.com"
@@ -148,7 +153,9 @@ const ContactForm = () => {
           )}
         </div>
         <div className="mt-6">
-          <Label className="block text-xs mb-2">コラボレーターコード</Label>
+          <Label className="block text-xs mb-2">
+            {t("contact.collaboratorCode")}
+          </Label>
           <Input {...register("collaboratorCode")} placeholder="8931" />
           {errors.collaboratorCode && (
             <p className="text-red-500">{errors.collaboratorCode.message}</p>
@@ -157,7 +164,7 @@ const ContactForm = () => {
       </div>
 
       <div>
-        <Label className="block text-xs mb-2">お問い合わせ内容</Label>
+        <Label className="block text-xs mb-2">{t("contact.message")}</Label>
         <Textarea
           {...register("message")}
           placeholder="Your message"

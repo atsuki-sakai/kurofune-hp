@@ -16,12 +16,12 @@ export function Animation({
   delay,
 }: AnimationProps) {
   return (
-    <AnimationWrapper
-      animationType={animationType}
-      duration={duration}
-      delay={delay}
-    >
-      {children}
-    </AnimationWrapper>
+    // <AnimationWrapper
+    //   animationType={animationType}
+    //   duration={duration}
+    //   delay={delay}
+    // >
+    <>{children}</>
+    // </AnimationWrapper>
   );
 }

@@ -56,7 +56,7 @@ const ResponsiveImage = ({
 
   return (
     <Image
-      className={`${className} min-h-screen w-full`}
+      className={`${className} min-h-screen w-full object-cover`}
       src={imageSrc || spImage}
       alt={alt}
       width={imageSize.width}

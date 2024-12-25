@@ -1,7 +1,50 @@
 {
   "home": {
     "text-1": "こんにちわ",
-    "text-2": "fdfasdfsadfa"
+    "text-2": "fdfasdfsadfa",
+    "hero": {
+      "title": "ITの力でビジネスを最大化する。",
+      "description": "デジタルの力であなたの会社の成長の未来を切り開くパートナーになります。",
+      "request_docs": "資料を請求する",
+      "view_pricing": "料金表を見る",
+      "scroll": "SCROLL"
+    },
+    "whyus": {
+      "title": "なぜKUROFUNEが良いのか？"
+    },
+    "talent": {
+      "title": "400万人の優秀層が\n｢想い｣で通じあえる\n会社を待っています。",
+      "description": "Wantedlyには価値観を軸にシゴトを探すユーザーが幅広い職種から集まっています。仕事のやりがいや、事業の社会的意義の発信を通じて、自社に本当にマッチする人材を採用しましょう。"
+    },
+    "vision": {
+      "title": "会社の「想い」が、\n見える、伝わる。",
+      "subtitle": "あなたの会社だけの魅力を伝える\n豊富な手段が揃っています。"
+    },
+    "recruitment": {
+      "title": "掲載し放題の募集で",
+      "description": "中途からインターンまで、公開本数の限りなくあらゆる職種で応募を集めることができます。誰でも簡単に会社の想いを伝えることができるフォーマットを提供しています。",
+      "button": "募集を開始",
+      "subtext": "新卒・インターン / 中途・副業採用 / 全職種対応"
+    },
+    "pricing": {
+      "title": "成果報酬なし。\n採用コストを抑えられます。",
+      "description": "Wantedlyは、運用の工夫で採用単価が抑えられ、使えば使うほどお客様に採用効果を感じていただけるよう、成果報酬のかからない毎月定額の料金モデルを採用しています。",
+      "button": "料金表を見る"
+    },
+    "options": {
+      "title": "採用ニーズに合わせて カスタマイズ。",
+      "button": "オプションについて"
+    },
+    "background_text": {
+      "hello": "HELLO",
+      "programming": "PROGRAMMING",
+      "world": "WORLD",
+      "options": "OPTIONS"
+    },
+    "row_section": {
+      "bg_text_1": "Hello World World",
+      "bg_text_2": "Hello World"
+    }
   },
   "menu": {
     "title": "メニュー",
@@ -38,7 +81,41 @@
     "shopify-api_title": "ShopifyAPI開発",
     "shopify-api_description": "ShopifyAPIを利用しバックオフィス業務を改善し自社ECを次のステップへ。",
     "business-improvement_title": "業務改善システム開発",
-    "business-improvement_description": "日々の業務を自動化するプログラムの開発を行います。まずは改善したい業務をお聞かせ下さい。",
-    "othermenu": "その他"
+    "business-improvement_description": "日々の業務を自動化するプログラムの開発を行います。まずは改善��たい業務をお聞かせ下さい。",
+    "othermenu": "その他",
+    "business_hours": "営業時間 - 10:00～17:00"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "以下のフォームに必要事項をご記入ください。",
+    "first_name": "名",
+    "last_name": "姓",
+    "email": "メールアドレス",
+    "company": "会社名",
+    "phone": "電話番号",
+    "message": "お問い合わせ内容",
+    "budget": "予算",
+    "budget_options": {
+      "under_25k": "25万円未満",
+      "25k-50k": "25万円〜50万円",
+      "50k-100k": "50万円〜100万円",
+      "over_100k": "100万円以上"
+    },
+    "send": "送信する",
+    "sending": "送信中...",
+    "success_message": "お問い合わせありがとうございます。担当者より連絡させていただきます。",
+    "error_message": "送信に失敗しました。時間をおいて再度お試しください。",
+    "name": "お名前",
+    "name_placeholder": "山田 太郎",
+    "email_placeholder": "your-email@example.com",
+    "company_placeholder": "株式会社〇〇",
+    "category_placeholder": "カテゴリを選択",
+    "category_general": "一般的なお問い合わせ",
+    "category_support": "サポート",
+    "category_sales": "営業関連",
+    "category_other": "その他",
+    "site_url_placeholder": "https://test.myshopify.com",
+    "collaborator_code_placeholder": "8931",
+    "message_placeholder": "お問い合わせ内容を入力してください"
   }
 }

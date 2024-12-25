@@ -78,6 +78,7 @@ export function AnimationWrapper({
       ref={ref}
       className={getAnimationClasses()}
       style={{
+        overflow: "hidden",
         transitionDuration: `${duration}ms`, // Add this line
         transitionDelay: `${delay}ms`,
       }}

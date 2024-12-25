@@ -2,10 +2,12 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+
 type LanguageSwitchLinkProps = {
   lang: string;
   currentLang: string;
 };
+
 function LanguageSwitchLink({ lang, currentLang }: LanguageSwitchLinkProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -17,7 +19,7 @@ function LanguageSwitchLink({ lang, currentLang }: LanguageSwitchLinkProps) {
     } else {
       newPath = pathname.replace(`/${currentLang}`, `/${lang}`);
     }
-    router.push(newPath);
+    window.location.href = newPath;
   };
 
   return (

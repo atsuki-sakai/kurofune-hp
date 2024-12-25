@@ -2,10 +2,14 @@ import React from "react";
 import Image from "next/image";
 import ParallaxHeader from "@/components/common/ParallaxHeader";
 import ContactForm from "@/components/contact/ContactForm";
-
+import { useTranslation } from "@/app/i18n";
 const placeholderImg = "https://via.placeholder.com/1920x1080";
 
-const ContactPage: React.FC = () => {
+export default async function ContactPage({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
   return (
     <div className="relative w-full ">
       <ParallaxHeader
@@ -35,11 +39,10 @@ const ContactPage: React.FC = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <ContactForm />
+          <ContactForm lang={lang} />
         </div>
       </div>
     </div>
   );
 };
 
-export default ContactPage;

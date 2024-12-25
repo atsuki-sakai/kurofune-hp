@@ -22,119 +22,94 @@ async function NavigationMenuDemo({ lang }: Props) {
 
   const components = [
     {
-      title: t("menu.news"),
-      href: "/docs/primitives/progress",
+      title: t("menu.news_title"),
+      href: "/news",
       description: t("menu.news_description"),
     },
     {
       title: t("menu.blog"),
-      href: "/docs/primitives/tabs",
+      href: "/blog",
       description: t("menu.blog_description"),
     },
     {
-      title: t("menu.company"),
-      href: "/",
-      description: t("menu.company_description"),
+      title: t("menu.faq"),
+      href: "/faq",
+      description: t("menu.faq_description"),
+    },
+    {
+      title: t("menu.contact_title"),
+      href: "/contact",
+      description: t("menu.contact_description"),
     },
   ];
 
   return (
     <NavigationMenu>
-      <NavigationMenuList className="gap-1">
+      <NavigationMenuList>
         <NavigationMenuItem>
-          <Link href="/service-pricing" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(
-                navigationMenuTriggerStyle(),
-                "navigation-menu-link-small"
-              )}
-            >
-              {t("menu.price-title")}
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="navigation-menu-link-small">
-            {t("menu.all-services")}
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger>{t("menu.service")}</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
+                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <div>
-                      <Image
-                        src={"https://via.placeholder.com/150x120"}
-                        alt={t("menu.shopify_title")}
-                        width={150}
-                        height={120}
-                      />
+                    <div className="mb-2 mt-4 text-lg font-medium">
+                      {t("menu.all-services")}
                     </div>
-                    <div className="mb-2 mt-4 text-sm font-medium">
-                      {t("menu.shopify_title")}
-                    </div>
-                    <p className="text-[11px] tracking-wider leading-4 text-muted-foreground">
-                      {t("menu.shopify_description")}
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      {t("menu.service_description")}
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title={t("menu.web-development_title")}>
-                <p className="text-[11px] tracking-wider leading-[1.4] text-muted-foreground">
-                  {t("menu.web-development_description")}
-                </p>
+              <ListItem href="/docs" title={t("menu.shopify_title")}>
+                {t("menu.shopify_description")}
               </ListItem>
               <ListItem
                 href="/docs/installation"
-                title={t("menu.shopify-api_title")}
+                title={t("menu.web-development_title")}
               >
-                <p className="text-[11px] tracking-wider leading-[1.4] text-muted-foreground">
-                  {t("menu.shopify-api_description")}
-                </p>
+                {t("menu.web-development_description")}
               </ListItem>
               <ListItem
                 href="/docs/primitives/typography"
                 title={t("menu.business-improvement_title")}
               >
-                <p className="text-[11px] tracking-wider leading-[1.4] text-muted-foreground">
-                  {t("menu.business-improvement_description")}
-                </p>
+                {t("menu.business-improvement_description")}
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="navigation-menu-link-small">
-            {t("menu.othermenu")}
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger>{t("menu.company")}</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
                   href={component.href}
                 >
-                  <p className="text-[11px] leading-[1.4] tracking-wider text-muted-foreground">
-                    {component.description}
-                  </p>
+                  {component.description}
                 </ListItem>
               ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              {t("menu.price-title")}
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <Link href="/contact" legacyBehavior passHref>
-            <NavigationMenuLink
-              className={cn(
-                navigationMenuTriggerStyle(),
-                "navigation-menu-link-small tracking-wider font-bold bg-black text-white dark:bg-indigo-900 dark:hover:bg-gray-300 dark:text-white"
-              )}
-            >
-              {t("menu.contact")}
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              {t("menu.contact_title")}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

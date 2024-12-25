@@ -37,7 +37,7 @@ const ParallaxHeader: React.FC<ParallaxHeaderProps> = ({
     <div className="relative overflow-hidden" style={{ height: `${_height}` }}>
       <div
         ref={backgroundRef}
-        className="absolute inset-0 will-change-transform"
+        className="absolute left-0 right-0 will-change-transform"
         style={{ transform: "translateY(0)" }}
       >
         {backgroundContent}
