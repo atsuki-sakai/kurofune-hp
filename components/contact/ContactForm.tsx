@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "../ui/label";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "@/app/i18n";
 
 const formSchema = z.object({
   name: z.string().min(2),
@@ -40,8 +40,8 @@ const validateForm = async (formData: FormData) => {
   return { success: true, data: result.data };
 };
 
-const ContactForm = ({ lang }: { lang: string }) => {
-  const { t } = useTranslation("common");
+const ContactForm = async ({ lang }: { lang: string }) => {
+  const { t } = await useTranslation(lang, "common");
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -110,12 +110,19 @@ const ContactForm = ({ lang }: { lang: string }) => {
       </div>
       <div>
         <Label className="block text-xs mb-2">{t("contact.email")}</Label>
-        <Input {...register("email")} placeholder="Email" type="email" />
+        <Input
+          {...register("email")}
+          placeholder={t("contact.email_placeholder")}
+          type="email"
+        />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       </div>
       <div>
         <Label className="block text-xs mb-2">{t("contact.company")}</Label>
-        <Input {...register("company")} placeholder="Company (optional)" />
+        <Input
+          {...register("company")}
+          placeholder={t("contact.company_placeholder")}
+        />
       </div>
       <div>
         <Label className="block text-xs mb-2">{t("contact.category")}</Label>
@@ -127,13 +134,17 @@ const ContactForm = ({ lang }: { lang: string }) => {
           }}
         >
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select a category" />
+            <SelectValue placeholder={t("contact.category_placeholder")} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="general">General</SelectItem>
-            <SelectItem value="support">Support</SelectItem>
-            <SelectItem value="sales">Sales</SelectItem>
-            <SelectItem value="other">Other</SelectItem>
+            <SelectItem value="general">
+              {t("contact.category_general")}
+            </SelectItem>
+            <SelectItem value="support">
+              {t("contact.category_support")}
+            </SelectItem>
+            <SelectItem value="sales">{t("contact.category_sales")}</SelectItem>
+            <SelectItem value="other">{t("contact.category_other")}</SelectItem>
           </SelectContent>
         </Select>
         {errors.category && (
@@ -143,10 +154,10 @@ const ContactForm = ({ lang }: { lang: string }) => {
 
       <div>
         <div>
-          <Label className="block text-xs mb-2">{t("contact.siteUrl")}</Label>
+          <Label className="block text-xs mb-2">{t("contact.site_url")}</Label>
           <Input
             {...register("siteUrl")}
-            placeholder="https://test.myshopify.com"
+            placeholder={t("contact.site_url_placeholder")}
           />
           {errors.siteUrl && (
             <p className="text-red-500">{errors.siteUrl.message}</p>
@@ -154,9 +165,12 @@ const ContactForm = ({ lang }: { lang: string }) => {
         </div>
         <div className="mt-6">
           <Label className="block text-xs mb-2">
-            {t("contact.collaboratorCode")}
+            {t("contact.collaborator_code")}
           </Label>
-          <Input {...register("collaboratorCode")} placeholder="8931" />
+          <Input
+            {...register("collaboratorCode")}
+            placeholder={t("contact.collaborator_code_placeholder")}
+          />
           {errors.collaboratorCode && (
             <p className="text-red-500">{errors.collaboratorCode.message}</p>
           )}
@@ -167,21 +181,21 @@ const ContactForm = ({ lang }: { lang: string }) => {
         <Label className="block text-xs mb-2">{t("contact.message")}</Label>
         <Textarea
           {...register("message")}
-          placeholder="Your message"
+          placeholder={t("contact.message_placeholder")}
           rows={5}
         />
         {errors.message && (
           <p className="text-red-500">{errors.message.message}</p>
         )}
       </div>
-      {submitError && <p className="text-red-500">{submitError}</p>}
+      {submitError && (
+        <p className="text-red-500">{t("contact.error_message")}</p>
+      )}
       {submitSuccess && (
-        <p className="text-green-500">
-          Thank you for your message. Well get back to you soon!
-        </p>
+        <p className="text-green-500">{t("contact.success_message")}</p>
       )}
       <Button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? "Sending..." : "Send Message"}
+        {isSubmitting ? t("contact.sending") : t("contact.send")}
       </Button>
     </form>
   );

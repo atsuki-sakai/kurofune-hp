@@ -45,11 +45,8 @@ export default function MemberGrid() {
           role="list"
           className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3"
         >
-          {people.map((person) => (
-            <li
-              key={person.name}
-              className="flex flex-col gap-10 pt-12 sm:flex-row"
-            >
+          {people.map((person, index) => (
+            <li key={index} className="flex flex-col gap-10 pt-12 sm:flex-row">
               <img
                 alt=""
                 src={person.imageUrl}

@@ -1,11 +1,13 @@
 {
   "home": {
     "hero": {
-      "title": "生成AI×デジタルイノベーションで、あなたのビジネスを新たな高みへ。",
-      "description": "「AIを活用した自動化からECサイト構築、モダンアプリ開発まで。最先端の技術を駆使し、売上アップと業務効率化を同時に実現します。」",
-      "request_docs": "資料を請求する",
-      "view_pricing": "料金表を見る",
-      "scroll": "SCROLL"
+      "title": "アイデアが動き出す。生成AIで拓く次世代のWebソリューション",
+      "description": "AIを駆使した自動化からECサイト構築、モダンアプリ開発まで幅広く対応。最新技術で売上を伸ばしお客様の業務をよりスマートに効率化。",
+      "request_docs": "無料相談はこちら",
+      "view_pricing": "導入事例を見る",
+      "scroll": "SCROLL",
+      "banner_text": "何ができるのか詳しく知る",
+      "read_more": "Read more"
     },
     "whyus": {
       "title": "なぜKUROFUNEが良いのか？"
@@ -26,7 +28,7 @@
     },
     "pricing": {
       "title": "成果報酬なし。\n採用コストを抑えられます。",
-      "description": "Wantedlyは、運用の工夫で採用単価が抑えられ、使えば使うほどお客様に採用効果を感じていただけるよう、成果報酬のかからない毎月定額の料金モデルを採用しています。",
+      "description": "Wantedly��、運用の工夫で採用単価が抑えられ、使えば使うほどお客様に採用効果を感じていただけるよう、成果報酬のかからない毎月定額の料金モデルを採用しています。",
       "button": "料金表を見る"
     },
     "options": {
@@ -57,7 +59,7 @@
     "about-us_title": "会社概要",
     "about-us_description": "当社の理念、ビジョン、そして提供するサービスについての詳細な情報をご覧いただけます。",
     "service_title": "事業内容",
-    "service_description": "当社では、以下のような幅広い事業を提供しています。",
+    "service_description": "当社では、以下のような幅��い事業を提供しています。",
     "recruit_title": "採用情報",
     "recruit_description": "当社では、以下のような幅広い事業を提供しています。",
     "news_title": "お知らせ",
@@ -73,13 +75,13 @@
     "faq_description": "当社では、以下のような幅広い事業を提供しています。",
     "price-title": "料金表",
     "shopify_title": "Shopify構築・機能開発",
-    "shopify_description": " Shopifyの可能性を最大限に引き出す開発に強みがあります。お客様のECサイトに最適なカスタマイズされたECソリューションをお届けします。ビジネスニーズに合わせた独自機能の開発で、競争力のあるオンラインストアを実現。",
+    "shopify_description": " Shopifyの可能性を最大限に引き出す開発に強みがあります。お客様のECサイトに最適なカスタマイズされたECソリューションをお届けします。ビジネスニーズに合わせた独自機能の開発で、競争力のあるオンライ���ストアを実現。",
     "web-development_title": "WEBサイト・WEBアプリ開発",
     "web-development_description": "最新のNext.jsで構築するので非常に高速に動作し他社のサイトと差別化が図れます。",
     "shopify-api_title": "ShopifyAPI開発",
     "shopify-api_description": "ShopifyAPIを利用しバックオフィス業務を改善し自社ECを次のステップへ。",
     "business-improvement_title": "業務改善システム開発",
-    "business-improvement_description": "日々の業務を自動化するプログラムの開発を行います。まずは改善��たい業務をお聞かせ下さい。",
+    "business-improvement_description": "日々の業務を自動化するプログラムの開発を行います。まずは改善したい業務をお聞かせ下さい。",
     "othermenu": "その他",
     "business_hours": "営業時間 - 10:00～17:00"
   },
@@ -108,7 +110,7 @@
     "email_placeholder": "your-email@example.com",
     "company_placeholder": "株式会社〇〇",
     "category_placeholder": "カテゴリを選択",
-    "category_general": "一般的なお問い合わせ",
+    "category_general": "一般��なお問い合わせ",
     "category_support": "サポート",
     "category_sales": "営業関連",
     "category_other": "その他",

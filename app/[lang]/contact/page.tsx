@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import ParallaxHeader from "@/components/common/ParallaxHeader";
 import ContactForm from "@/components/contact/ContactForm";
-import { useTranslation } from "@/app/i18n";
 const placeholderImg = "https://via.placeholder.com/1920x1080";
 
 export default async function ContactPage({

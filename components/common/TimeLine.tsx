@@ -1,6 +1,6 @@
 const timeline = [
   {
-    name: "Founded company",
+    name: "お客様の課題を第一に考え、最適解を追求する",
     description:
       "Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.",
     date: "Aug 2021",
