@@ -10,6 +10,7 @@ export async function getBlogs(): Promise<Blog[]> {
       orders: "-createdAt",
     },
   });
+
   return data.contents;
 }
 

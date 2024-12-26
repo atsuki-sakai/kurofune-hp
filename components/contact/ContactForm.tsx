@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import { z } from "zod";
+import { useTranslation } from "react-i18next";
 import {
   Select,
   SelectContent,
@@ -16,7 +17,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "../ui/label";
-import { useTranslation } from "@/app/i18n";
 
 const formSchema = z.object({
   name: z.string().min(2),
@@ -40,8 +40,8 @@ const validateForm = async (formData: FormData) => {
   return { success: true, data: result.data };
 };
 
-const ContactForm = async ({ lang }: { lang: string }) => {
-  const { t } = await useTranslation(lang, "common");
+const ContactForm = () => {
+  const { t } = useTranslation("common");
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
