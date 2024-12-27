@@ -31,7 +31,7 @@ export default async function Home({
   return (
     <>
       <TopSection lang={lang} />
-      <NewsSection />
+      <NewsSection lang={lang} />
       <FeatureSection />
       <MarqueeSection />
       {/* <CtaSection /> */}
@@ -40,7 +40,7 @@ export default async function Home({
       <ServicePoint lang={lang} />
       <ServiceColumn lang={lang} />
       <ServiceCard lang={lang} />
-      <BlogSection />
+      <BlogSection lang={lang} />
       {/* <PricingSection />
       <TimeLine />
       <MemberGrid />

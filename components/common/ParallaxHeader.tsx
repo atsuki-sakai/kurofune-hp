@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 interface ParallaxHeaderProps {
   backgroundContent: React.ReactNode;
@@ -11,37 +12,31 @@ const ParallaxHeader: React.FC<ParallaxHeaderProps> = ({
   backgroundContent,
   height = "full",
 }) => {
-  const backgroundRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const backgroundElement = backgroundRef.current;
+  // スムーズなパララックス効果のためのtransform
+  const y = useTransform(scrollY, [0, 1000], [0, 500], {
+    ease: (x: number) => x,
+  });
 
-    if (!backgroundElement) return;
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const backgroundTranslate = scrollPosition * 0.5;
-
-      backgroundElement.style.transform = `translateY(${backgroundTranslate}px)`;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  var _height = height === "sm" ? "60vh" : height == "md" ? "80vh" : "100vh";
+  const _height = height === "sm" ? "60vh" : height === "md" ? "80vh" : "100vh";
 
   return (
-    <div className="relative overflow-hidden" style={{ height: `${_height}` }}>
-      <div
-        ref={backgroundRef}
+    <div className="relative overflow-hidden" style={{ height: _height }}>
+      <motion.div
+        ref={ref}
         className="absolute left-0 right-0 will-change-transform"
-        style={{ transform: "translateY(0)" }}
+        style={{
+          y,
+          // パフォーマンス最適化のためのスタイル
+          willChange: "transform",
+          backfaceVisibility: "hidden",
+          WebkitBackfaceVisibility: "hidden",
+        }}
       >
         {backgroundContent}
-      </div>
+      </motion.div>
     </div>
   );
 };

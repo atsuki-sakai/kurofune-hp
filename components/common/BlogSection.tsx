@@ -14,7 +14,7 @@ export async function getBlogs(): Promise<Blog[]> {
   return data.contents;
 }
 
-export default async function BlogSection() {
+export default async function BlogSection({ lang }: { lang: string }) {
   const blogs = await getBlogs();
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -44,7 +44,11 @@ export default async function BlogSection() {
               <div className="absolute inset-0 -z-10 size-full object-cover"></div>
               <div className="absolute top-0 right-0 -z-10 bg-slate-500 rounded-bl-2xl shadow-lg">
                 <p className="text-white px-5 py-2">
-                  {blog.category ? blog.category.name : ""}
+                  {blog.category
+                    ? lang === "ja"
+                      ? blog.category.category.category_ja
+                      : blog.category.category.category_en
+                    : "fdsa"}
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
@@ -64,7 +68,7 @@ export default async function BlogSection() {
               <h3 className="mt-3 text-lg/6 font-semibold text-white">
                 <a href={`/blog/${blog.id}`}>
                   <span className="absolute inset-0" />
-                  {blog.title}
+                  {lang === "ja" ? blog.title.title_ja : blog.title.title_en}
                 </a>
               </h3>
             </article>
