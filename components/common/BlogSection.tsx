@@ -3,6 +3,7 @@ import { BLOG_ENDPOINT } from "@/app/services/microcms/const";
 import { client } from "@/app/services/microcms/client";
 import Image from "next/image";
 import { useTranslation } from "@/app/i18n";
+import Link from "next/link";
 
 export async function getBlogs(): Promise<Blog[]> {
   const data = await client.get({
@@ -72,10 +73,10 @@ export default async function BlogSection({ lang }: { lang: string }) {
                 </div>
               </div>
               <h3 className="mt-3 text-lg/6 font-semibold text-white">
-                <a href={`/blog/${blog.id}`}>
+                <Link href={`/blog/${blog.id}`}>
                   <span className="absolute inset-0" />
                   {lang === "ja" ? blog.title.title_ja : blog.title.title_en}
-                </a>
+                </Link>
               </h3>
             </article>
           ))}

@@ -1,5 +1,6 @@
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
 import { useTranslation } from "@/app/i18n";
+import Link from "next/link";
 
 export default async function CtaSection({ lang }: { lang: string }) {
   const { t } = await useTranslation(lang, "common");
@@ -36,10 +37,13 @@ export default async function CtaSection({ lang }: { lang: string }) {
                 ))}
               </ul>
               <div className="mt-10 flex">
-                <a href="#" className="text-sm/6 font-semibold text-indigo-400">
+                <Link
+                  href="#"
+                  className="text-sm/6 font-semibold text-indigo-400"
+                >
                   {t("home.cta.contact_link")}{" "}
                   <span aria-hidden="true">&rarr;</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

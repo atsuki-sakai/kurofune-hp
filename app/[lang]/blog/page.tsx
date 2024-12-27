@@ -2,6 +2,7 @@ import { client } from "@/app/services/microcms/client";
 import { BLOG_ENDPOINT } from "@/app/services/microcms/const";
 import Image from "next/image";
 import { Blog } from "@/types/microcmsTypes";
+import Link from "next/link";
 
 async function getBlogs(): Promise<Blog[]> {
   const data = await client.get({
@@ -25,9 +26,10 @@ export default async function BlogPage({
     <div className="container mx-auto min-h-screen mt-[--header-height]">
       <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogs.map((blog) => (
-          <a
+          <Link
             key={blog.id}
-            href={`/${currentLang}/blog/${blog.id}`}
+            href={`/blog/${blog.id}`}
+            locale={currentLang}
             className="block"
           >
             <div className="relative">
@@ -47,7 +49,7 @@ export default async function BlogPage({
               {currentLang === "ja" ? blog.title.title_ja : blog.title.title_en}
             </h2>
             <span className="text-gray-500">{blog.author}</span>
-          </a>
+          </Link>
         ))}
       </div>
     </div>
