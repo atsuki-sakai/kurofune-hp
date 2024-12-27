@@ -28,8 +28,7 @@ export default async function BlogPage({
         {blogs.map((blog) => (
           <Link
             key={blog.id}
-            href={`/blog/${blog.id}`}
-            locale={currentLang}
+            href={`/${currentLang}/blog/${blog.id}`}
             className="block"
           >
             <div className="relative">

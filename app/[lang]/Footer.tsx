@@ -108,7 +108,7 @@ async function Footer({ lang }: Props) {
       <li>
         <Button variant={"link"} className="p-0 ">
           <Link
-            href={href}
+            href={`/${lang}${href}`}
             className="tracking-widest font-light text-xs underline"
           >
             {title}

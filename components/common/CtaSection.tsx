@@ -38,7 +38,7 @@ export default async function CtaSection({ lang }: { lang: string }) {
               </ul>
               <div className="mt-10 flex">
                 <Link
-                  href="#"
+                  href={`/${lang}/contact`}
                   className="text-sm/6 font-semibold text-indigo-400"
                 >
                   {t("home.cta.contact_link")}{" "}

@@ -19,7 +19,7 @@ const Logo = ({ lang }: Props) => {
 
   if (!mounted) {
     return (
-      <Link href={`/${lang ?? ""}`} className="block">
+      <Link href={`/${lang ? lang : ""}`} locale={lang} className="block">
         <div className="flex items-center gap-2">
           <Image
             src={"/assets/images/logo-black.jpg"}
@@ -41,7 +41,7 @@ const Logo = ({ lang }: Props) => {
   const currentTheme = theme === "system" ? resolvedTheme : theme;
 
   return (
-    <Link href={`/${lang ?? ""}`} className="block">
+    <Link href={`/${lang ? lang : ""}`} locale={lang} className="block">
       <div className="flex items-center gap-2">
         <Image
           src={

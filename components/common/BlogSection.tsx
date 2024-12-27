@@ -73,8 +73,10 @@ export default async function BlogSection({ lang }: { lang: string }) {
                 </div>
               </div>
               <h3 className="mt-3 text-lg/6 font-semibold text-white">
-                <Link href={`/blog/${blog.id}`}>
-                  <span className="absolute inset-0" />
+                <Link
+                  href={`/${lang}/blog/${blog.id}`}
+                  className="absolute inset-0"
+                >
                   {lang === "ja" ? blog.title.title_ja : blog.title.title_en}
                 </Link>
               </h3>

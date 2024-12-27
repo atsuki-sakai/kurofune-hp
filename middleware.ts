@@ -1,6 +1,30 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
+// 許可する言語のリスト
+const locales = ['en', 'ja']
+
+// ユーザーの言語設定を取得する関数
+function getLocale(request: NextRequest) {
+  // URLからlocaleを取得
+  const pathname = request.nextUrl.pathname
+  const pathnameLocale = locales.find(locale => pathname.startsWith(`/${locale}/`) || pathname.startsWith(`/${locale}`))
+  if (pathnameLocale) return pathnameLocale
+
+  // Accept-Languageヘッダーからlocaleを取得
+  const acceptLanguage = request.headers.get('accept-language')
+  if (acceptLanguage) {
+    const preferredLocale = acceptLanguage
+      .split(',')
+      .map(lang => lang.split(';')[0])
+      .find(lang => locales.includes(lang))
+    if (preferredLocale) return preferredLocale
+  }
+
+  // デフォルトのlocale
+  return 'ja'
+}
+
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
@@ -9,14 +33,21 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // ルートパスへのアクセスを/jaにリダイレクト
+  // 既に言語パスが含まれているかチェック
+  const hasLocale = locales.some(locale => 
+    pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  )
+
+  // ルートパスへのアクセスを適切な言語にリダイレクト
   if (pathname === '/') {
-    return NextResponse.redirect(new URL('/ja', request.url))
+    const locale = getLocale(request)
+    return NextResponse.redirect(new URL(`/${locale}`, request.url))
   }
 
-  // パスに言語が含まれていない場合、デフォルトで/jaを追加
-  if (!pathname.startsWith('/ja') && !pathname.startsWith('/en')) {
-    return NextResponse.redirect(new URL(`/ja${pathname}`, request.url))
+  // パスに言語が含まれていない場合のみ、言語を追加
+  if (!hasLocale) {
+    const locale = getLocale(request)
+    return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url))
   }
 
   return NextResponse.next()

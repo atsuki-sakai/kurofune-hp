@@ -51,7 +51,11 @@ export default async function TopSection({ lang }: { lang: string }) {
                   <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                     <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 transition-all duration-300 hover:ring-gray-900/20 bg-white hover:bg-white/50">
                       {t("home.hero.banner_text")}{" "}
-                      <Link href="#" className="font-semibold text-indigo-600">
+                      <Link
+                        href="#"
+                        locale={lang}
+                        className="font-semibold text-indigo-600"
+                      >
                         <span aria-hidden="true" className="absolute inset-0" />
                         {t("home.hero.read_more")}
                         <span aria-hidden="true">&rarr;</span>
@@ -68,12 +72,14 @@ export default async function TopSection({ lang }: { lang: string }) {
                     <div className="mt-10 flex items-center justify-center gap-x-6">
                       <Link
                         href="/"
+                        locale={lang}
                         className="rounded-md bg-indigo-600 px-8 py-3 transition-all duration-300 tracking-wide text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       >
                         {t("home.hero.request_docs")}
                       </Link>
                       <Link
                         href="/"
+                        locale={lang}
                         className="text-sm/6 text-gray-900 tracking-widest underline underline-offset-4 text-indigo-600"
                       >
                         {t("home.hero.view_pricing")}→

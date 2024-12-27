@@ -50,7 +50,10 @@ export default async function NewsSection({ lang }: { lang: string }) {
               </div>
               <div className="group relative">
                 <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                  <Link href={`/news/${post.id}`}>
+                  <Link
+                    href={`/${lang}/news/${post.id}`}
+                    className="relative z-10"
+                  >
                     <span className="absolute inset-0" />
                     {lang === "ja" ? post.title.title_ja : post.title.title_en}
                   </Link>
@@ -68,7 +71,10 @@ export default async function NewsSection({ lang }: { lang: string }) {
               <div className="relative mt-8 flex items-center gap-x-4">
                 <div className="text-sm/6">
                   <p className="font-semibold text-gray-900">
-                    <Link href={`/news/${post.id}`}>
+                    <Link
+                      href={`/${lang}/news/${post.id}`}
+                      className="relative z-10"
+                    >
                       <span className="absolute inset-0" />
                       {post.author}
                     </Link>

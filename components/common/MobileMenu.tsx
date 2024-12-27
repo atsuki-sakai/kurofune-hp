@@ -22,16 +22,6 @@ import {
 
 import { useTranslation } from "@/app/i18n";
 
-function _buildMobileMenuLink(href: string, text: string) {
-  return (
-    <Link
-      href={href}
-      className="block w-full py-2 text-left text-sm font-medium transition-colors duration-300 ease-out border-b tracking-wide"
-    >
-      {text}
-    </Link>
-  );
-}
 
 async function MobileMenu({ currentLang }: { currentLang: string }) {
   const { t } = await useTranslation(currentLang, "common");
@@ -63,7 +53,7 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
             <AccordionItem value="item-1">
               <AccordionTrigger>{t("menu.all-services")}</AccordionTrigger>
               <AccordionContent className="flex flex-col space-y-3 my-3">
-                <Link href={`/${currentLang}`}>
+                <Link href={`/${currentLang}`} locale={currentLang}>
                   <Button className="w-full block pt-2 pb-1 h-full text-start tracking-wide shadow-sm">
                     <p className="text-xs font-bold whitespace-pre-line">
                       {t("menu.web-development_title")}
@@ -73,7 +63,7 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
                     </p>
                   </Button>
                 </Link>
-                <Link href={`/${currentLang}`}>
+                <Link href={`/${currentLang}`} locale={currentLang}>
                   <Button className="w-full block pt-2 pb-1 h-full text-start tracking-wide shadow-sm">
                     <p className="text-xs font-bold whitespace-pre-line">
                       {t("menu.shopify_title")}
@@ -83,7 +73,7 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
                     </p>
                   </Button>
                 </Link>
-                <Link href={`/${currentLang}`}>
+                <Link href={`/${currentLang}`} locale={currentLang}>
                   <Button className="w-full block pt-2 pb-1 h-full text-start tracking-wide shadow-sm">
                     <p className="text-xs font-bold whitespace-pre-line">
                       {t("menu.business-improvement_title")}
@@ -98,27 +88,34 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
             <AccordionItem value="item-2">
               <AccordionTrigger>{t("menu.company")}</AccordionTrigger>
               <AccordionContent className="flex flex-col space-y-3 my-3">
-                <Link href={`/${currentLang}/company`}>
+                <Link href={`/${currentLang}/company`} locale={currentLang}>
                   <Button className="w-full block py-2 h-full text-start tracking-wide shadow-sm">
                     <p className="text-sm text-center">{t("menu.about")}</p>
                   </Button>
                 </Link>
-                <Link href={`/${currentLang}/company`}>
-                  <Button className="w-full block py-2 h-full text-start tracking-wide shadow-sm">
-                    <p className="text-sm text-center">{t("menu.news")}</p>
-                  </Button>
+                <Link
+                  href={`/${currentLang}/company`}
+                  locale={currentLang}
+                  className="w-full block py-2 h-full text-start tracking-wide shadow-sm"
+                >
+                  <p className="text-sm text-center">{t("menu.news")}</p>
                 </Link>
-                <Link href={`/${currentLang}/company`}>
-                  <Button className="w-full block py-2 h-full text-start tracking-wide shadow-sm">
-                    <p className="text-sm text-center">{t("menu.blog")}</p>
-                  </Button>
+                <Link
+                  href={`/${currentLang}/company`}
+                  locale={currentLang}
+                  className="w-full block py-2 h-full text-start tracking-wide shadow-sm"
+                >
+                  <p className="text-sm text-center">{t("menu.blog")}</p>
                 </Link>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
           <SheetClose asChild className="mt-4">
             <Button className="w-full">
-              <Link href={`/${currentLang}/service-pricing`}>
+              <Link
+                href={`/${currentLang}/service-pricing`}
+                locale={currentLang}
+              >
                 {t("menu.price-title")}
               </Link>
             </Button>
@@ -128,7 +125,9 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
         <SheetFooter className="flex flex-col sm:flex-col gap-3 space-y-0 space-x-0 mt-3">
           <SheetClose asChild>
             <Button className="w-full">
-              <Link href={`/${currentLang}/contact`}>{t("menu.contact")}</Link>
+              <Link href={`/${currentLang}/contact`} locale={currentLang}>
+                {t("menu.contact")}
+              </Link>
             </Button>
           </SheetClose>
 
