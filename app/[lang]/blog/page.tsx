@@ -1,40 +1,55 @@
 import { client } from "@/app/services/microcms/client";
 import { BLOG_ENDPOINT } from "@/app/services/microcms/const";
-import type { Blog } from "@/types/microcmsTypes";
+import Image from "next/image";
+import { Blog } from "@/types/microcmsTypes";
 
-const FETCH_BLOG_LIMIT = 12;
-export async function getBlogs(): Promise<Blog[]> {
+async function getBlogs(): Promise<Blog[]> {
   const data = await client.get({
     endpoint: BLOG_ENDPOINT,
-    queries: { limit: FETCH_BLOG_LIMIT },
+    queries: {
+      orders: "-createdAt",
+    },
   });
   return data.contents;
 }
 
 export default async function BlogPage({
-  params,
+  params: { lang },
 }: {
   params: { lang: string };
 }) {
-  const lang = params.lang || "ja";
   const blogs = await getBlogs();
-  if (!blogs) return <div>Blog not found</div>;
+  const currentLang = lang || "ja";
 
   return (
     <div className="container mx-auto min-h-screen mt-[--header-height]">
-      <h1>Blog</h1>
-      <ul>
+      <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogs.map((blog) => (
-          <li key={blog.id}>
-            <p>{lang === "ja" ? blog.title.title_ja : blog.title.title_en}</p>
-            <p>
-              {lang === "ja"
-                ? blog.content.content_ja
-                : blog.content.content_en}
-            </p>
-          </li>
+          <a
+            key={blog.id}
+            href={`/${currentLang}/blog/${blog.id}`}
+            className="block"
+          >
+            <div className="relative">
+              <Image
+                src={blog.eyecatch.url}
+                alt={
+                  currentLang === "ja"
+                    ? blog.title.title_ja
+                    : blog.title.title_en
+                }
+                width={blog.eyecatch.width}
+                height={blog.eyecatch.height}
+                className="w-full aspect-video object-cover"
+              />
+            </div>
+            <h2 className="mt-4 text-xl font-semibold">
+              {currentLang === "ja" ? blog.title.title_ja : blog.title.title_en}
+            </h2>
+            <span className="text-gray-500">{blog.author}</span>
+          </a>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

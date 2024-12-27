@@ -1,15 +1,9 @@
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import { useTranslation } from "@/app/i18n";
 
-const benefits = [
-  "Competitive salaries",
-  "Flexible work hours",
-  "30 days of paid vacation",
-  "Annual team retreats",
-  "Benefits for you and your family",
-  "A great work environment",
-];
+export default async function CtaSection({ lang }: { lang: string }) {
+  const { t } = await useTranslation(lang, "common");
 
-export default function CtaSection() {
   return (
     <div className="bg-gray-900 py-24 sm:py-32">
       <div className="relative isolate">
@@ -21,30 +15,30 @@ export default function CtaSection() {
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
             />
             <div className="w-full flex-auto">
-              <h2 className="text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                Join our team
+              <h2 className="text-pretty text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                {t("home.cta.title")}
               </h2>
               <p className="mt-6 text-pretty text-lg/8 text-gray-300">
-                Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
-                magnam voluptatum cupiditate veritatis in accusamus quisquam.
+                {t("home.cta.description")}
               </p>
               <ul
                 role="list"
                 className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-white sm:grid-cols-2"
               >
-                {benefits.map((benefit) => (
-                  <li key={benefit} className="flex gap-x-3">
+                {[1, 2, 3, 4, 5, 6].map((num) => (
+                  <li key={num} className="flex gap-x-3">
                     <CheckCircleIcon
                       aria-hidden="true"
                       className="h-7 w-5 flex-none"
                     />
-                    {benefit}
+                    {t(`home.cta.benefit-${num}`)}
                   </li>
                 ))}
               </ul>
               <div className="mt-10 flex">
                 <a href="#" className="text-sm/6 font-semibold text-indigo-400">
-                  See our job postings <span aria-hidden="true">&rarr;</span>
+                  {t("home.cta.contact_link")}{" "}
+                  <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
             </div>

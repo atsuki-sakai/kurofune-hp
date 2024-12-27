@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import { z } from "zod";
-import { useTranslation } from "react-i18next";
 import {
   Select,
   SelectContent,
@@ -30,18 +29,7 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const validateForm = async (formData: FormData) => {
-  const result = formSchema.safeParse(formData);
-
-  if (!result.success) {
-    return { success: false, errors: result.error.flatten().fieldErrors };
-  }
-
-  return { success: true, data: result.data };
-};
-
-const ContactForm = () => {
-  const { t } = useTranslation("common");
+export default function ContactForm() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -64,29 +52,16 @@ const ContactForm = () => {
     setSubmitSuccess(false);
 
     try {
-      console.log("Form data:", data); // デバッグ用
-      const validationResult = await validateForm(data);
-      if (!validationResult.success) {
-        setSubmitError("Validation failed. Please check your inputs.");
-        console.error("Validation error:", validationResult.errors);
-        return;
-      }
-
-      var templateParams = {
-        ...data,
-      };
-
       const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams,
+        data,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
 
       if (result.text === "OK") {
         reset();
         setSubmitSuccess(true);
-        console.log("Email sent successfully");
       } else {
         throw new Error("Failed to send email");
       }
@@ -101,104 +76,45 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
-        <Label className="block text-xs mb-2">{t("contact.name")}</Label>
-        <Input
-          {...register("name")}
-          placeholder={t("contact.name_placeholder")}
-        />
+        <Label className="block text-xs mb-2">お名前</Label>
+        <Input {...register("name")} placeholder="山田 太郎" />
         {errors.name && <p className="text-red-500">{errors.name.message}</p>}
       </div>
+
       <div>
-        <Label className="block text-xs mb-2">{t("contact.email")}</Label>
+        <Label className="block text-xs mb-2">メールアドレス</Label>
         <Input
           {...register("email")}
-          placeholder={t("contact.email_placeholder")}
           type="email"
+          placeholder="your-email@example.com"
         />
         {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       </div>
       <div>
-        <Label className="block text-xs mb-2">{t("contact.company")}</Label>
-        <Input
-          {...register("company")}
-          placeholder={t("contact.company_placeholder")}
-        />
-      </div>
-      <div>
-        <Label className="block text-xs mb-2">{t("contact.category")}</Label>
-        <Select
-          onValueChange={(value) => {
-            register("category").onChange({
-              target: { name: "category", value },
-            });
-          }}
-        >
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder={t("contact.category_placeholder")} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="general">
-              {t("contact.category_general")}
-            </SelectItem>
-            <SelectItem value="support">
-              {t("contact.category_support")}
-            </SelectItem>
-            <SelectItem value="sales">{t("contact.category_sales")}</SelectItem>
-            <SelectItem value="other">{t("contact.category_other")}</SelectItem>
-          </SelectContent>
-        </Select>
-        {errors.category && (
-          <p className="text-red-500">{errors.category.message}</p>
-        )}
+        <Label className="block text-xs mb-2">会社名</Label>
+        <Input {...register("company")} type="text" placeholder="会社名" />
+        {errors.email && <p className="text-red-500">{errors.email.message}</p>}
       </div>
 
       <div>
-        <div>
-          <Label className="block text-xs mb-2">{t("contact.site_url")}</Label>
-          <Input
-            {...register("siteUrl")}
-            placeholder={t("contact.site_url_placeholder")}
-          />
-          {errors.siteUrl && (
-            <p className="text-red-500">{errors.siteUrl.message}</p>
-          )}
-        </div>
-        <div className="mt-6">
-          <Label className="block text-xs mb-2">
-            {t("contact.collaborator_code")}
-          </Label>
-          <Input
-            {...register("collaboratorCode")}
-            placeholder={t("contact.collaborator_code_placeholder")}
-          />
-          {errors.collaboratorCode && (
-            <p className="text-red-500">{errors.collaboratorCode.message}</p>
-          )}
-        </div>
+        <Label className="block text-xs mb-2">お問い合わせ内容</Label>
+        <Textarea {...register("message")} placeholder="お問い合わせ内容" />
       </div>
 
-      <div>
-        <Label className="block text-xs mb-2">{t("contact.message")}</Label>
-        <Textarea
-          {...register("message")}
-          placeholder={t("contact.message_placeholder")}
-          rows={5}
-        />
-        {errors.message && (
-          <p className="text-red-500">{errors.message.message}</p>
-        )}
-      </div>
+      <Button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? "送信中..." : "送信する"}
+      </Button>
+
       {submitError && (
-        <p className="text-red-500">{t("contact.error_message")}</p>
+        <p className="text-red-500">
+          送信に失敗しました。時間をおいて再度お試しください。
+        </p>
       )}
       {submitSuccess && (
-        <p className="text-green-500">{t("contact.success_message")}</p>
+        <p className="text-green-500">
+          お問い合わせありがとうございます。担当者より連絡させていただきます。
+        </p>
       )}
-      <Button type="submit" disabled={isSubmitting}>
-        {isSubmitting ? t("contact.sending") : t("contact.send")}
-      </Button>
     </form>
   );
-};
-
-export default ContactForm;
+}

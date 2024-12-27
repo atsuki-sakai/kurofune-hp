@@ -1,6 +1,4 @@
 import React from "react";
-import { useTranslation } from "../i18n";
-
 import FeatureSection from "@/components/common/FeatureSection";
 import CtaSection from "@/components/common/CtaSection";
 import GridTile from "@/components/common/GridTile";
@@ -26,16 +24,14 @@ export default async function Home({
 }: {
   params: { lang: string };
 }) {
-  const { t } = await useTranslation(lang, "common");
-
   return (
     <>
       <TopSection lang={lang} />
       <NewsSection lang={lang} />
-      <FeatureSection />
+      <FeatureSection lang={lang} />
       <MarqueeSection />
-      {/* <CtaSection /> */}
-      <GridTile />
+      <CtaSection lang={lang} />
+      <GridTile lang={lang} />
       <HowToBanner lang={lang} />
       <ServicePoint lang={lang} />
       <ServiceColumn lang={lang} />

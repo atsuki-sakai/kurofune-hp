@@ -1,9 +1,9 @@
 import { client } from "@/app/services/microcms/client";
 import { BLOG_ENDPOINT } from "@/app/services/microcms/const";
 import Image from "next/image";
-import type { Blog } from "@/types/microcmsTypes";
+import { Blog } from "@/types/microcmsTypes";
 
-export async function getBlog(id: string): Promise<Blog> {
+async function getBlog(id: string): Promise<Blog> {
   const data = await client.get({
     endpoint: BLOG_ENDPOINT,
     contentId: id,
@@ -11,13 +11,13 @@ export async function getBlog(id: string): Promise<Blog> {
   return data;
 }
 
-export default async function BlogIdPage({
-  params,
+export default async function BlogPage({
+  params: { id, lang },
 }: {
   params: { id: string; lang: string };
 }) {
-  const blog = await getBlog(params.id);
-  const currentLang = params.lang || "ja";
+  const blog = await getBlog(id);
+  const currentLang = lang || "ja";
 
   if (!blog) return <div>Blog not found</div>;
 

@@ -3,7 +3,7 @@ import { NEWS_ENDPOINT } from "@/app/services/microcms/const";
 import type { News } from "@/types/microcmsTypes";
 
 const FETCH_NEWS_LIMIT = 12;
-export async function getNews(): Promise<News[]> {
+async function getNews(): Promise<News[]> {
   const data = await client.get({
     endpoint: NEWS_ENDPOINT,
     queries: { limit: FETCH_NEWS_LIMIT },

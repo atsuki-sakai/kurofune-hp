@@ -46,6 +46,88 @@
     "row_section": {
       "bg_text_1": "Hello World World",
       "bg_text_2": "Hello World"
+    },
+    "news": {
+      "title": "News",
+      "description": "Latest updates and announcements"
+    },
+    "feature": {
+      "subtitle": "Our Expertise",
+      "title": "We are your \"Digital Partner\" solving business challenges from the ground up.",
+      "description": "From AI automation to EC development and modern app creation. We streamline complex operations to dramatically increase sales and customer satisfaction.",
+     
+          "name-1": "Shopify EC Development & Customization",
+          "description-1": "• Develop custom apps for specific business needs, such as reservation systems and point programs, adding unique features for your company.\n• Implement API integration with logistics and inventory management systems to automate order-to-shipping processes, reducing human error and supporting efficient operations."
+        ,
+        
+          "name-2": "Generative AI & RAG Solutions",
+          "description-2": "• Utilize platforms like Dify to develop generative AI using company data, creating agents tailored to your operations for routine task automation.\n• Integrate existing CRM and ERP systems with generative AI to automate response operations using AI trained on proprietary data."
+        ,
+        
+          "name-3": "Modern Web Development with Latest Technology",
+          "description-3": "• Develop high-performance business systems like customer management and operation tools to support operational efficiency.\n• Significantly reduce maintenance and management costs through GCP and Firebase-based web development, enabling server management without heavy investment even for small businesses."
+        
+      
+    },
+    "cta": {
+      "title": "Comprehensive Support\nFrom System Development to Operation",
+      "description": "Our engineers will listen to your business model and propose solutions optimized for your needs.",
+      "contact_link": "Contact us for consultation",
+      "benefit-1": "Custom system development optimized for your business",
+      "benefit-2": "Reduced operating costs through cloud utilization",
+      "benefit-3": "Comprehensive support and additional development",
+      "benefit-4": "365-day rapid problem solving and response",
+      "benefit-5": "Training and education for system operation",
+      "benefit-6": "Consistent support from development to operation"
+    },
+    "gridTile": {
+      "title": "Our Services",
+      "subtitle": "Take Your Business to New Heights with AI × Digital Innovation",
+      "tile-1": {
+        "title": "AI Solutions",
+        "subtitle": "Automate tasks with AI and focus on what truly matters",
+        "list-1": "• Automated inquiry response\nAI chatbots quickly handle customer questions, reducing staff workload and improving customer satisfaction.",
+        "list-2": "• High-precision recommendations using data\nAnalyze purchase history and browsing data to suggest optimal products and plans for each user, increasing repeat rates and sales.",
+        "list-3": "• Effective use of internal knowledge\nTrain AI on manuals and FAQs for smooth internal inquiries, reducing new employee training costs.",
+        "merit-title": "Benefits of Implementation",
+        "merit-1": "• Increased sales and LTV through personalized service",
+        "merit-2": "• Create an environment where staff can focus on core tasks"
+      },
+      "tile-2": {
+        "title": "EC Site Development & Customization",
+        "subtitle": "Grow your sales 24/7 with an attractive online store",
+        "list-1": "• Scalable EC development centered on Shopify\nWide range of support from inventory/order automation to brand-aligned design.",
+        "list-2": "• Business efficiency with Shopify Flow and custom apps\nAutomate complex tasks like stock notifications and marketing emails. Reduce human error and focus on customer service and marketing.",
+        "list-3": "• Global expansion and multilingual support\nExpand your market reach worldwide at reasonable costs. Seize the opportunity to explore previously unreachable markets.",
+        "merit-title": "Benefits of Implementation",
+        "merit-1": "• Significant reduction in operating costs & improved customer experience",
+        "merit-2": "• Implement original design and unique features to enhance brand power"
+      },
+      "tile-3": {
+        "title": "System Development",
+        "subtitle": "Fast and scalable systems that powerfully support business growth",
+        "list-1": "• We propose systems tailored to your needs, including specific operating costs and implementation expenses.",
+        "list-2": "• Using GCP×CloudRun×Firestore configuration for automatic scaling, maintaining stability during high traffic with pay-as-you-go pricing for cost optimization.",
+        "list-3": "• Build a high-performance DB with low initial costs using Firestore. Keep data real-time updated and utilize collected data effectively."
+      },
+      "tile-4": {
+        "title": "Website & Web Application Development",
+        "subtitle": "Simultaneously achieve cost reduction, UX improvement, and development optimization",
+        "list-1": "• Significantly improve page load speeds by combining Next.js server-side rendering with FastAPI high-performance backend development.",
+        "list-2": "• Smooth feature additions possible, allowing for development aligned with business growth stages.",
+        "list-3": "• Utilize Google Cloud Platform (GCP) for stable performance even during high traffic, with auto-scaling for optimal resource allocation."
+      },
+      "tile-5": {
+        "title": "Global Business Expansion",
+        "subtitle": "Now is the time to expand globally. Seize the opportunity to explore new markets.",
+        "list-1": "• Enable global market access with multilingual EC site development",
+        "list-2": "• Support smooth international expansion through integration with local payment and delivery services",
+        "list-3": "• System design compliant with international regulations and compliance requirements"
+      }
+    },
+    "blog": {
+      "title": "Blog Posts",
+      "subtitle": "Latest Tech Trends and Development Case Studies"
     }
   },
   "menu": {
