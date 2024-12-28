@@ -16,7 +16,9 @@ async function LanguageSwitcher({ currentLang }: { currentLang: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">{t("menu.currentLanguage")}</Button>
+        <Button variant="outline" className="text-xs">
+          {t("menu.currentLanguage")}
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>{t("menu.switchLanguage")}</DropdownMenuLabel>

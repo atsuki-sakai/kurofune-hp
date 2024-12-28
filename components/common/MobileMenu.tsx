@@ -28,7 +28,9 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">{t("menu.title")}</Button>
+        <Button variant="outline" className="text-xs">
+          {t("menu.title")}
+        </Button>
       </SheetTrigger>
       <SheetContent className="overflow-y-scroll">
         <SheetHeader>

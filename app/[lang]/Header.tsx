@@ -13,7 +13,7 @@ type Props = {
 const Header: React.FC<Props> = ({ lang }) => {
   return (
     <HeaderBlurEffect>
-      <header className="fixed inset-x-0 top-0 z-50 h-[--header-height]">
+      <header className="fixed inset-x-0 top-0 z-50 h-[--header-height]  px-2 pt-2">
         <div className="flex w-full h-auto items-center justify-between max-w-pagewidth mx-auto md:px-8 md:py-1.5">
           <Logo lang={lang} />
           <nav className="hidden md:flex px-12">
@@ -23,9 +23,9 @@ const Header: React.FC<Props> = ({ lang }) => {
             <LanguageSwitcher currentLang={lang} />
             <DarkModeToggleButton />
           </div>
-        </div>
-        <div className="block ml-2 md:hidden">
-          <MobileMenu currentLang={lang} />
+          <div className="block md:hidden">
+            <MobileMenu currentLang={lang} />
+          </div>
         </div>
       </header>
     </HeaderBlurEffect>
