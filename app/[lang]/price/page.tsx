@@ -1,6 +1,10 @@
 import Heading from "@/components/common/Heading";
 import PricingSection from "@/components/common/PricingSection";
-export default function PricePage({ lang }: { lang: string }) {
+export default function PricePage({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
   return (
     <>
       <Heading

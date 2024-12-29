@@ -1,3 +1,7 @@
-export default function ServicesWebPage({ lang }: { lang: string }) {
+export default function ServicesWebPage({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
   return <div>ServicesWebPage</div>;
 }

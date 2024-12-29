@@ -2,7 +2,11 @@ import Heading from "@/components/common/Heading";
 import Feature from "@/components/services/Feature";
 import Faq from "@/components/services/Faq";
 
-export default function ServicesShopifyPage({ lang }: { lang: string }) {
+export default function ServicesShopifyPage({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
   return (
     <>
       <Heading
