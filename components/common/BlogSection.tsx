@@ -1,6 +1,6 @@
 import type { Blog } from "@/types/microcmsTypes";
-import { BLOG_ENDPOINT } from "@/app/services/microcms/const";
-import { client } from "@/app/services/microcms/client";
+import { BLOG_ENDPOINT } from "@/services/microcms/const";
+import { client } from "@/services/microcms/client";
 import Image from "next/image";
 import { useTranslation } from "@/app/i18n";
 import Link from "next/link";

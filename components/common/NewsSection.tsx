@@ -1,6 +1,6 @@
-import { client } from "@/app/services/microcms/client";
+import { client } from "@/services/microcms/client";
 import type { News } from "@/types/microcmsTypes";
-import { NEWS_ENDPOINT } from "@/app/services/microcms/const";
+import { NEWS_ENDPOINT } from "@/services/microcms/const";
 import { useTranslation } from "@/app/i18n";
 import Link from "next/link";
 

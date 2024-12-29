@@ -1,5 +1,5 @@
-import { client } from "@/app/services/microcms/client";
-import { NEWS_ENDPOINT } from "@/app/services/microcms/const";
+import { client } from "@/services/microcms/client";
+import { NEWS_ENDPOINT } from "@/services/microcms/const";
 import Image from "next/image";
 import type { News } from "@/types/microcmsTypes";
 

@@ -1,5 +1,5 @@
-import { client } from "@/app/services/microcms/client";
-import { BLOG_ENDPOINT } from "@/app/services/microcms/const";
+import { client } from "@/services/microcms/client";
+import { BLOG_ENDPOINT } from "@/services/microcms/const";
 import Image from "next/image";
 import { Blog } from "@/types/microcmsTypes";
 import Link from "next/link";
