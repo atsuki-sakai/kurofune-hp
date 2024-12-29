@@ -2,14 +2,14 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 const imagePaths = [
-  "https://via.placeholder.com/320x120",
-  "https://via.placeholder.com/320x120",
-  "https://via.placeholder.com/320x120",
-  "https://via.placeholder.com/320x120",
-  "https://via.placeholder.com/320x120",
-  "https://via.placeholder.com/320x120",
-  "https://via.placeholder.com/320x120",
-  "https://via.placeholder.com/320x120",
+  "/assets/images/1.jpg",
+  "/assets/images/2.jpg",
+  "/assets/images/3.jpg",
+  "/assets/images/4.jpg",
+  "/assets/images/5.jpg",
+  "/assets/images/6.jpg",
+  "/assets/images/7.jpg",
+  "/assets/images/8.jpg",
 ];
 
 export default async function MarqueeSection() {
@@ -20,7 +20,7 @@ export default async function MarqueeSection() {
           {imagePaths.map((imagePath, index) => (
             <div
               key={index + "-" + imagePath.slice(0, 5)}
-              className="w-[120px] md:w-[320px] h-auto mx-2 md:mx-4"
+              className="w-[100px] md:w-[280px] h-auto mx-2 md:mx-4"
             >
               <Image
                 className="w-full h-auto object-cover"

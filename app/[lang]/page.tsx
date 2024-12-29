@@ -32,18 +32,16 @@ export default async function Home({
       <MarqueeSection />
       <CtaSection lang={lang} />
       <GridTile lang={lang} />
-      <HowToBanner lang={lang} />
       <ServicePoint lang={lang} />
       <ServiceColumn lang={lang} />
       <ServiceCard lang={lang} />
       <BlogSection lang={lang} />
-      {/* <PricingSection />
-      <TimeLine />
-      <MemberGrid />
-      <Testmonial />
-      <ContentSection />
-      <LogoCloud />
-      <Faqs /> */}
+      <PricingSection lang={lang} />
+      {/* <MemberGrid /> */}
+      {/* <Testmonial /> */}
+      {/* <ContentSection /> */}
+      {/* <LogoCloud /> */}
+      <Faqs lang={lang} />
       <OptionsSection lang={lang} />
     </>
   );

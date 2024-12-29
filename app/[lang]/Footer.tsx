@@ -103,34 +103,17 @@ const navigation = {
 async function Footer({ lang }: Props) {
   const { t } = await useTranslation(lang, "common");
 
-  const _buildInfoItem = ({ title, href }: { title: string; href: string }) => {
-    return (
-      <li>
-        <Button variant={"link"} className="p-0 ">
-          <Link
-            href={`/${lang}${href}`}
-            className="tracking-widest font-light text-xs underline"
-          >
-            {title}
-          </Link>
-        </Button>
-      </li>
-    );
-  };
 
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <img
-              alt="Company name"
-              src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-              className="h-9"
-            />
-            <p className="text-balance text-sm/6 text-gray-600">
-              Making the world a better place through constructing elegant
-              hierarchies.
+            <Logo lang={lang} />
+            <p className="text-balance text-sm text-gray-600">
+              アイデアが動き出す。
+              <br />
+              進化した次世代のWebソリューション
             </p>
             <div className="flex gap-x-6">
               {navigation.social.map((item) => (
@@ -220,7 +203,7 @@ async function Footer({ lang }: Props) {
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-sm/6 text-gray-600">
-            &copy; 2024 Your Company, Inc. All rights reserved.
+            &copy; 2024 KUROFUNE, Inc. All rights reserved.
           </p>
         </div>
       </div>

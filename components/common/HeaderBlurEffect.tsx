@@ -32,14 +32,16 @@ export const HeaderBlurEffect: React.FC<Props> = ({ children }) => {
     ? "bg-white/30 dark:bg-gray-900/40 backdrop-blur-sm shadow-sm"
     : "bg-transparent";
 
+  console.log("isBlurred", isBlurred);
+
   return (
     <>
       <div
         ref={observerRef}
-        className="h-screen w-full absolute top-0 left-0 -z-10 pointer-events-none"
+        className="h-auto w-full absolute top-0 left-0 -z-10 pointer-events-none"
       />
       <div
-        className={`fixed top-0 left-0 w-screen transition-all duration-500 z-50 ${blurredClass}`}
+        className={`fixed top-0 left-0 w-screen h-[--header-height] transition-all duration-500 z-50 ${blurredClass}`}
       >
         {children}
       </div>

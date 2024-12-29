@@ -1,90 +1,105 @@
 import { Fragment } from "react";
 import { CheckIcon, MinusIcon } from "@heroicons/react/20/solid";
+import { useTranslation } from "@/app/i18n";
 
-const tiers = [
+// プラン名や価格をShopify運用サポート向けに変更
+export const tiers = [
   {
-    name: "Starter",
-    id: "tier-starter",
+    name: "Lite",
+    displayName: "ライト",
+    id: "tier-lite",
     href: "#",
-    priceMonthly: "$19",
+    priceMonthly: "¥19,980",
     mostPopular: false,
   },
   {
-    name: "Growth",
-    id: "tier-growth",
+    name: "Pro",
+    displayName: "プロ",
+    id: "tier-pro",
     href: "#",
-    priceMonthly: "$49",
+    priceMonthly: "¥39,980",
     mostPopular: true,
   },
   {
-    name: "Scale",
-    id: "tier-scale",
+    name: "Enterprise",
+    displayName: "エンタープライズ",
+    id: "tier-enterprise",
     href: "#",
-    priceMonthly: "$99",
+    priceMonthly: "¥99,980",
     mostPopular: false,
   },
 ];
-const sections = [
+
+// 機能やサポート内容をShopifyの運用支援に合わせて改変
+export const sections = [
   {
-    name: "Features",
+    name: "Shopify運用機能",
     features: [
       {
-        name: "Edge content delivery",
-        tiers: { Starter: true, Growth: true, Scale: true },
+        name: "商品登録・在庫管理代行（月あたり対応件数）",
+        tiers: { Lite: "30件", Pro: "200件", Enterprise: "無制限" },
       },
       {
-        name: "Custom domains",
-        tiers: { Starter: "1", Growth: "3", Scale: "Unlimited" },
+        name: "テーマアップデート・軽微な修正",
+        tiers: { Lite: true, Pro: true, Enterprise: true },
       },
       {
-        name: "Team members",
-        tiers: { Starter: "3", Growth: "20", Scale: "Unlimited" },
+        name: "SEO対策・検索順位改善アドバイス",
+        tiers: {
+          Lite: "基本チェック",
+          Pro: "詳細レポート",
+          Enterprise: "継続コンサル",
+        },
       },
       {
-        name: "Single sign-on (SSO)",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "多言語対応サポート",
+        tiers: { Lite: false, Pro: "一部対応", Enterprise: "全ページ" },
+      },
+      {
+        name: "カスタム機能の追加開発",
+        tiers: { Lite: false, Pro: false, Enterprise: true },
       },
     ],
   },
   {
-    name: "Reporting",
+    name: "販促・集客支援",
     features: [
       {
-        name: "Advanced analytics",
-        tiers: { Starter: true, Growth: true, Scale: true },
+        name: "SNS広告運用アドバイス",
+        tiers: { Lite: true, Pro: true, Enterprise: true },
       },
       {
-        name: "Basic reports",
-        tiers: { Starter: false, Growth: true, Scale: true },
+        name: "キャンペーン施策企画",
+        tiers: { Lite: false, Pro: true, Enterprise: true },
       },
       {
-        name: "Professional reports",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "リピート顧客向け施策設計",
+        tiers: { Lite: false, Pro: false, Enterprise: true },
       },
       {
-        name: "Custom report builder",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "ブランド向上のためのデザイン監修",
+        tiers: { Lite: false, Pro: false, Enterprise: true },
       },
     ],
   },
   {
-    name: "Support",
+    name: "サポート",
     features: [
       {
-        name: "24/7 online support",
-        tiers: { Starter: true, Growth: true, Scale: true },
+        name: "メール・チャットによる質問対応",
+        tiers: { Lite: true, Pro: true, Enterprise: true },
       },
       {
-        name: "Quarterly workshops",
-        tiers: { Starter: false, Growth: true, Scale: true },
+        name: "月次オンラインミーティング",
+        tiers: { Lite: false, Pro: true, Enterprise: true },
       },
       {
-        name: "Priority phone support",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "優先電話サポート",
+        tiers: { Lite: false, Pro: false, Enterprise: true },
       },
       {
-        name: "1:1 onboarding tour",
-        tiers: { Starter: false, Growth: false, Scale: true },
+        name: "1対1の専任担当による運用コンサル",
+        tiers: { Lite: false, Pro: false, Enterprise: true },
       },
     ],
   },
@@ -94,19 +109,25 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+export default async function PricingSection({ lang }: { lang: string }) {
+  const { t } = await useTranslation(lang, "common");
+
   return (
     <div className="bg-gray-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-base/7 font-semibold text-indigo-400">Pricing</h2>
-          <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl">
-            Pricing that grows with you
+          <h2 className="text-base/7 font-semibold text-indigo-400">
+            料金プラン
+          </h2>
+          <p className="mt-2  text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+            ビジネスの成長に
+            <br />
+            合わせた<span className="text-indigo-400">柔軟なプラン</span>
           </p>
         </div>
-        <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-400 sm:text-xl/8">
-          Choose an affordable plan that’s packed with the best features for
-          engaging your audience, creating customer loyalty, and driving sales.
+        <p className="mx-auto mt-6 max-w-3xl text-pretty text-center text-sm font-medium text-gray-400 sm:text-base">
+          お客様とのコミュニケーション促進からリピーター獲得、売上アップまでを強力にサポートする
+          機能を詰め込んだプランをリーズナブルにご提供いたします。貴社のニーズに合わせてお選びください。
         </p>
 
         {/* xs to lg */}
@@ -132,18 +153,6 @@ export default function Example() {
                   /month
                 </span>
               </p>
-              <a
-                href={tier.href}
-                aria-describedby={tier.id}
-                className={classNames(
-                  tier.mostPopular
-                    ? "bg-indigo-500 text-white hover:bg-indigo-400 focus-visible:outline-indigo-500"
-                    : "bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white",
-                  "mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                )}
-              >
-                Buy plan
-              </a>
               <ul role="list" className="mt-10 space-y-4 text-sm/6 text-white">
                 {sections.map((section) => (
                   <li key={section.name}>

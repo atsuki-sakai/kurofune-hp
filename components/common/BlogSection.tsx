@@ -49,13 +49,13 @@ export default async function BlogSection({ lang }: { lang: string }) {
               <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
 
               <div className="absolute inset-0 -z-10 size-full object-cover"></div>
-              <div className="absolute top-0 right-0 -z-10 bg-slate-700 rounded-bl-2xl shadow-lg">
+              <div className="absolute top-0 right-0 -z-10 bg-slate-700 rounded-bl-2xl">
                 <p className="text-white font-bold px-5 py-2">
                   {blog.category
                     ? lang === "ja"
                       ? blog.category.category.category_ja
                       : blog.category.category.category_en
-                    : "fdsa"}
+                    : ""}
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
@@ -73,10 +73,7 @@ export default async function BlogSection({ lang }: { lang: string }) {
                 </div>
               </div>
               <h3 className="mt-3 text-lg/6 font-semibold text-white">
-                <Link
-                  href={`/${lang}/blog/${blog.id}`}
-                  className="absolute inset-0"
-                >
+                <Link href={`/${lang}/blog/${blog.id}`}>
                   {lang === "ja" ? blog.title.title_ja : blog.title.title_en}
                 </Link>
               </h3>

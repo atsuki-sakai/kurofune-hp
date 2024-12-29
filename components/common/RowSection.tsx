@@ -26,13 +26,13 @@ const RowSection = ({
 }: RowSectionProps) => {
   return (
     <div
-      className={`w-full max-w-pagewidth m-auto px-5 py-14  md:flex md:justify-center md:items-center md:gap-8 overflow-hidden ${
+      className={`w-full max-w-pagewidth m-auto px-5 py-14  md:flex md:justify-center md:items-center md:gap-8 ${
         flexReverse ? "md:flex-row-reverse" : ""
       }`}
     >
       <div className="relative tracking-wider mb-10 md:mb-0">
         <div
-          className={`absolute top-0 left-0 -z-10 rotate-90 ${
+          className={`absolute top-0 left-5 right-5 -z-10 rotate-90 ${
             flexReverse ? "translate-x-[50%]" : "-translate-x-[50%]"
           }`}
         >
@@ -43,9 +43,11 @@ const RowSection = ({
           </div>
         </div>
         <p className="text-3xl md:text-5xl font-bold">{heading}</p>
-        <span className="block py-5 text-sm md:text-base">{desc}</span>
-        {subText && <span className="block py-5">{subText}</span>}
-        <Button className="mt-8 px-12 py-6 rounded-full text-base md:text-xl tracking-widest dark:bg-indigo-900 dark:text-white">
+        <span className="block py-5 text-sm md:text-base text-slate-700">
+          {desc}
+        </span>
+        {subText && <span className="block py-1">{subText}</span>}
+        <Button className="mt-8 px-12 py-6 rounded-full font-semibold text-sm md:text-base tracking-widest dark:bg-indigo-900 dark:text-white">
           {btnLabel}
         </Button>
       </div>
