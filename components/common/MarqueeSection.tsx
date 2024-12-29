@@ -20,7 +20,7 @@ export default async function MarqueeSection() {
           {imagePaths.map((imagePath, index) => (
             <div
               key={index + "-" + imagePath.slice(0, 5)}
-              className="w-[100px] md:w-[280px] h-auto mx-2 md:mx-4"
+              className="w-[100px] md:w-[280px] h-auto mx-2 md:mx-4 rounded-xl overflow-hidden"
             >
               <Image
                 className="w-full h-auto object-cover"

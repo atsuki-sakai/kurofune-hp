@@ -1,6 +1,5 @@
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useTranslation } from "@/app/i18n";
 import { cn } from "@/lib/utils";
 import {
@@ -12,7 +11,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-
+import Image from "next/image";
 type Props = {
   lang: string;
 };
@@ -56,7 +55,13 @@ async function NavigationMenuDemo({ lang }: Props) {
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <div className="mb-2 mt-4 text-lg font-medium">
+                    {/* <Image
+                      src="/assets/images/3.jpg"
+                      alt="Services"
+                      width={150}
+                      height={150}
+                    /> */}
+                    <div className="mb-2 mt-4 text-base font-medium">
                       {t("menu.all-services")}
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
@@ -65,17 +70,20 @@ async function NavigationMenuDemo({ lang }: Props) {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title={t("menu.shopify_title")}>
+              <ListItem
+                href="/services/shopify"
+                title={t("menu.shopify_title")}
+              >
                 {t("menu.shopify_description")}
               </ListItem>
               <ListItem
-                href="/docs/installation"
+                href="/services/web"
                 title={t("menu.web-development_title")}
               >
                 {t("menu.web-development_description")}
               </ListItem>
               <ListItem
-                href="/docs/primitives/typography"
+                href="/services/automation"
                 title={t("menu.business-improvement_title")}
               >
                 {t("menu.business-improvement_description")}
@@ -100,7 +108,7 @@ async function NavigationMenuDemo({ lang }: Props) {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" locale={lang} legacyBehavior passHref>
+          <Link href="/price" locale={lang} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               {t("menu.price-title")}
             </NavigationMenuLink>

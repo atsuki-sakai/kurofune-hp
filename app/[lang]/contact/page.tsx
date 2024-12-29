@@ -1,6 +1,7 @@
 import ParallaxHeader from "@/components/common/ParallaxHeader";
 import ContactForm from "@/components/contact/ContactForm";
 import Heading from "@/components/common/Heading";
+import { PhoneIcon } from "@heroicons/react/24/outline";
 export default function ContactPage() {
   return (
     <div>
@@ -15,10 +16,11 @@ export default function ContactPage() {
             お電話にてご連絡ください。
             <br />
             <a
-              className="block mt-6 text-indigo-600 text-base font-light underline underline-offset-4"
+              className="block mt-6 text-base flex items-center gap-2 items-center"
               href="tel:07090308805"
             >
-              Tel : 070-9030-8805
+              <PhoneIcon className="w-5 h-5" />
+              <span>070 9030 8805</span>
             </a>
           </p>
         }

@@ -30,7 +30,6 @@ export const tiers = [
   },
 ];
 
-// 機能やサポート内容をShopifyの運用支援に合わせて改変
 export const sections = [
   {
     name: "Shopify運用機能",

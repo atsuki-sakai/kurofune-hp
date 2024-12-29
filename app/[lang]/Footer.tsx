@@ -13,27 +13,23 @@ type Props = {
 
 const navigation = {
   solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
+    { name: "Shopify", href: "#" },
+    { name: "Web Application", href: "#" },
     { name: "Automation", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
   ],
   support: [
-    { name: "Submit ticket", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
+    { name: "Shopify Support", href: "#" },
+    { name: "IT Support", href: "#" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
+    { name: "About", href: "/about" },
+    { name: "Jobs", href: "/jobs" },
+    { name: "Blog", href: "/blog" },
+    { name: "News", href: "/news" },
   ],
   legal: [
-    { name: "Terms of service", href: "#" },
-    { name: "Privacy policy", href: "#" },
-    { name: "License", href: "#" },
+    { name: "Terms of service", href: "/terms" },
+    { name: "Privacy policy", href: "/privacy" },
   ],
   social: [
     {

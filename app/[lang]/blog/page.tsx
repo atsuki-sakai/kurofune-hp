@@ -32,15 +32,11 @@ export default async function BlogPage({
       <div className="container mx-auto min-h-screen">
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogs.map((blog) => (
-            <Link
+            <article
               key={blog.id}
-              href={`/${currentLang}/blog/${blog.id}`}
-              className="block"
+              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
             >
-              <article
-                key={blog.id}
-                className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
-              >
+              <Link href={`/${currentLang}/blog/${blog.id}`} className="block">
                 <Image
                   alt={
                     lang === "ja" ? blog.title.title_ja : blog.title.title_en
@@ -78,12 +74,10 @@ export default async function BlogPage({
                   </div>
                 </div>
                 <h3 className="mt-3 text-lg/6 font-semibold text-white">
-                  <Link href={`/${lang}/blog/${blog.id}`}>
-                    {lang === "ja" ? blog.title.title_ja : blog.title.title_en}
-                  </Link>
+                  {lang === "ja" ? blog.title.title_ja : blog.title.title_en}
                 </h3>
-              </article>
-            </Link>
+              </Link>
+            </article>
           ))}
         </div>
       </div>

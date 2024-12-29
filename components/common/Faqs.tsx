@@ -60,7 +60,7 @@ export default async function Faqs({ lang }: { lang: string }) {
   const { t } = await useTranslation(lang, "common");
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+      <div className="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-24 lg:px-8">
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           {t("home.faqs.title")}
         </h2>

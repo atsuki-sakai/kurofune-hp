@@ -6,6 +6,7 @@ import MobileMenu from "@/components/common/MobileMenu";
 import NavigationMenu from "@/components/common/NavigationMenu";
 import { HeaderBlurEffect } from "@/components/common/HeaderBlurEffect";
 
+
 type Props = {
   lang: string;
 };
