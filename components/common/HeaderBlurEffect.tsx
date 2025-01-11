@@ -29,7 +29,7 @@ export const HeaderBlurEffect: React.FC<Props> = ({ children }) => {
   }, []);
 
   const blurredClass = isBlurred
-    ? "bg-white/30 dark:bg-gray-900/40 backdrop-blur-sm shadow-sm"
+    ? "bg-background/30 dark:bg-background/40 backdrop-blur-sm shadow-sm"
     : "bg-transparent";
 
   console.log("isBlurred", isBlurred);

@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { CheckIcon, MinusIcon } from "@heroicons/react/20/solid";
 import { useTranslation } from "@/app/i18n";
+import { cn } from "@/lib/utils";
 
 // プラン名や価格をShopify運用サポート向けに変更
 export const tiers = [
@@ -112,61 +113,88 @@ export default async function PricingSection({ lang }: { lang: string }) {
   const { t } = await useTranslation(lang, "common");
 
   return (
-    <div className="bg-gray-900 py-24 sm:py-32">
+    <div className="bg-background py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-base/7 font-semibold text-indigo-400">
-            料金プラン
+          <p className="text-base/7 font-semibold text-primary">
+            {t("home.pricing.subtitle")}
+          </p>
+          <h2 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            {t("home.pricing.title")}
           </h2>
-          <p className="mt-2  text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-            ビジネスの成長に
-            <br />
-            合わせた<span className="text-indigo-400">柔軟なプラン</span>
+          <p className="mt-6 text-lg/8 text-muted-foreground">
+            {t("home.pricing.description")}
           </p>
         </div>
-        <p className="mx-auto mt-6 max-w-3xl text-pretty text-center text-sm font-medium text-gray-400 sm:text-base">
-          お客様とのコミュニケーション促進からリピーター獲得、売上アップまでを強力にサポートする
-          機能を詰め込んだプランをリーズナブルにご提供いたします。貴社のニーズに合わせてお選びください。
+        <p className="mx-auto mt-6 max-w-2xl text-center text-sm/6 text-muted-foreground">
+          {t("home.pricing.disclaimer")}
         </p>
 
-        {/* xs to lg */}
-        <div className="mx-auto mt-12 max-w-md space-y-8 sm:mt-16 lg:hidden">
+        <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {tiers.map((tier) => (
-            <section
+            <div
               key={tier.id}
-              className={classNames(
+              className={cn(
                 tier.mostPopular
-                  ? "rounded-xl bg-white/5 ring-1 ring-inset ring-white/10"
-                  : "",
-                "p-8"
+                  ? "bg-muted ring-2 ring-primary"
+                  : "ring-1 ring-border",
+                "rounded-3xl p-8 xl:p-10"
               )}
             >
-              <h3 id={tier.id} className="text-sm/6 font-semibold text-white">
-                {tier.name}
-              </h3>
-              <p className="mt-2 flex items-baseline gap-x-1">
-                <span className="text-4xl font-semibold text-white">
+              <div className="flex items-center justify-between gap-x-4">
+                <h3
+                  id={tier.id}
+                  className="text-lg font-semibold text-foreground"
+                >
+                  {tier.name}
+                </h3>
+                {tier.mostPopular ? (
+                  <p className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                    Most popular
+                  </p>
+                ) : null}
+              </div>
+              <p className="mt-4 text-sm/6 text-muted-foreground">
+                {t(`home.pricing.tier-${tier.id}.description`)}
+              </p>
+              <p className="mt-6 flex items-baseline gap-x-1">
+                <span className="text-4xl font-bold tracking-tight text-foreground">
                   {tier.priceMonthly}
                 </span>
-                <span className="text-sm font-semibold text-gray-300">
+                <span className="text-sm font-semibold text-muted-foreground">
                   /month
                 </span>
               </p>
-              <ul role="list" className="mt-10 space-y-4 text-sm/6 text-white">
+              <a
+                href={tier.href}
+                aria-describedby={tier.id}
+                className={cn(
+                  tier.mostPopular
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                    : "bg-muted text-foreground hover:bg-muted/80",
+                  "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                )}
+              >
+                {t(`home.pricing.tier-${tier.id}.cta`)}
+              </a>
+              <ul
+                role="list"
+                className="mt-8 space-y-3 text-sm/6 text-muted-foreground"
+              >
                 {sections.map((section) => (
                   <li key={section.name}>
-                    <ul role="list" className="space-y-4">
+                    <ul role="list" className="space-y-3">
                       {section.features.map((feature: any) =>
                         feature.tiers[tier.name] ? (
                           <li key={feature.name} className="flex gap-x-3">
                             <CheckIcon
                               aria-hidden="true"
-                              className="h-6 w-5 flex-none text-indigo-400"
+                              className="h-6 w-5 flex-none text-primary"
                             />
                             <span>
                               {feature.name}{" "}
                               {typeof feature.tiers[tier.name] === "string" ? (
-                                <span className="text-sm/6 text-gray-400">
+                                <span className="text-sm/6 text-muted-foreground">
                                   ({feature.tiers[tier.name]})
                                 </span>
                               ) : null}
@@ -178,140 +206,8 @@ export default async function PricingSection({ lang }: { lang: string }) {
                   </li>
                 ))}
               </ul>
-            </section>
+            </div>
           ))}
-        </div>
-
-        {/* lg+ */}
-        <div className="isolate mt-20 hidden lg:block">
-          <div className="relative -mx-8">
-            {tiers.some((tier) => tier.mostPopular) ? (
-              <div className="absolute inset-x-4 inset-y-0 -z-10 flex">
-                <div
-                  style={{
-                    marginLeft: `${
-                      (tiers.findIndex((tier) => tier.mostPopular) + 1) * 25
-                    }%`,
-                  }}
-                  aria-hidden="true"
-                  className="flex w-1/4 px-4"
-                >
-                  <div className="w-full rounded-t-xl border-x border-t border-white/10 bg-white/5" />
-                </div>
-              </div>
-            ) : null}
-            <table className="w-full table-fixed border-separate border-spacing-x-8 text-left">
-              <caption className="sr-only">Pricing plan comparison</caption>
-              <colgroup>
-                <col className="w-1/4" />
-                <col className="w-1/4" />
-                <col className="w-1/4" />
-                <col className="w-1/4" />
-              </colgroup>
-              <thead>
-                <tr>
-                  <td />
-                  {tiers.map((tier) => (
-                    <th
-                      key={tier.id}
-                      scope="col"
-                      className="px-6 pt-6 xl:px-8 xl:pt-8"
-                    >
-                      <div className="text-sm/7 font-semibold text-white">
-                        {tier.name}
-                      </div>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    <span className="sr-only">Price</span>
-                  </th>
-                  {tiers.map((tier) => (
-                    <td key={tier.id} className="px-6 pt-2 xl:px-8">
-                      <div className="flex items-baseline gap-x-1 text-white">
-                        <span className="text-4xl font-semibold">
-                          {tier.priceMonthly}
-                        </span>
-                        <span className="text-sm/6 font-semibold">/month</span>
-                      </div>
-                      <a
-                        href={tier.href}
-                        className={classNames(
-                          tier.mostPopular
-                            ? "bg-indigo-500 hover:bg-indigo-400 focus-visible:outline-indigo-600"
-                            : "bg-white/10 hover:bg-white/20 focus-visible:outline-white",
-                          "mt-8 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-                        )}
-                      >
-                        Buy plan
-                      </a>
-                    </td>
-                  ))}
-                </tr>
-                {sections.map((section, sectionIdx) => (
-                  <Fragment key={section.name}>
-                    <tr>
-                      <th
-                        scope="colgroup"
-                        colSpan={4}
-                        className={classNames(
-                          sectionIdx === 0 ? "pt-8" : "pt-16",
-                          "pb-4 text-sm/6 font-semibold text-white"
-                        )}
-                      >
-                        {section.name}
-                        <div className="absolute inset-x-8 mt-4 h-px bg-white/10" />
-                      </th>
-                    </tr>
-                    {section.features.map((feature: any) => (
-                      <tr key={feature.name}>
-                        <th
-                          scope="row"
-                          className="py-4 text-sm/6 font-normal text-white"
-                        >
-                          {feature.name}
-                          <div className="absolute inset-x-8 mt-4 h-px bg-white/5" />
-                        </th>
-                        {tiers.map((tier) => (
-                          <td key={tier.id} className="px-6 py-4 xl:px-8">
-                            {typeof feature.tiers[tier.name] === "string" ? (
-                              <div className="text-center text-sm/6 text-gray-300">
-                                {feature.tiers[tier.name]}
-                              </div>
-                            ) : (
-                              <>
-                                {feature.tiers[tier.name] === true ? (
-                                  <CheckIcon
-                                    aria-hidden="true"
-                                    className="mx-auto size-5 text-indigo-400"
-                                  />
-                                ) : (
-                                  <MinusIcon
-                                    aria-hidden="true"
-                                    className="mx-auto size-5 text-gray-500"
-                                  />
-                                )}
-
-                                <span className="sr-only">
-                                  {feature.tiers[tier.name] === true
-                                    ? "Included"
-                                    : "Not included"}{" "}
-                                  in {tier.name}
-                                </span>
-                              </>
-                            )}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </Fragment>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
     </div>

@@ -53,11 +53,11 @@ const Logo = ({ lang }: Props) => {
           width={30}
           height={30}
         />
-        <h1 className="text-base md:text-xl font-semibold tracking-wider">
+        <h1 className="text-base md:text-xl font-semibold tracking-wider text-foreground">
           KUROFUNE
         </h1>
       </div>
-      <p className="text-[7px] w-fit py-0.5 px-1 rounded-sm">
+      <p className="text-[7px] w-fit py-0.5 px-1 rounded-sm text-muted-foreground">
         Bridging Global Tech Solutions
       </p>
     </Link>

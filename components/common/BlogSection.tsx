@@ -22,13 +22,13 @@ export default async function BlogSection({ lang }: { lang: string }) {
   const blogs = await getBlogs();
 
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-background py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             {t("home.blog.title")}
           </h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
+          <p className="mt-2 text-lg leading-8 text-muted-foreground">
             {t("home.blog.subtitle")}
           </p>
         </div>
@@ -36,7 +36,7 @@ export default async function BlogSection({ lang }: { lang: string }) {
           {blogs.map((blog: Blog) => (
             <article
               key={blog.id}
-              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
+              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-muted px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
             >
               <Image
                 alt={lang === "ja" ? blog.title.title_ja : blog.title.title_en}
@@ -45,12 +45,12 @@ export default async function BlogSection({ lang }: { lang: string }) {
                 src={blog.eyecatch.url}
                 className="absolute inset-0 -z-10 size-full object-cover"
               />
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/60" />
-              <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/60" />
+              <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-border/10" />
 
               <div className="absolute inset-0 -z-10 size-full object-cover"></div>
-              <div className="absolute top-0 right-0 -z-10 bg-slate-700 rounded-bl-2xl">
-                <p className="text-white font-bold px-5 py-2">
+              <div className="absolute top-0 right-0 -z-10 bg-muted rounded-bl-2xl">
+                <p className="text-background font-bold px-5 py-2">
                   {blog.category
                     ? lang === "ja"
                       ? blog.category.category.category_ja
@@ -58,21 +58,21 @@ export default async function BlogSection({ lang }: { lang: string }) {
                     : ""}
                 </p>
               </div>
-              <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-gray-300">
+              <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm/6 text-muted-foreground">
                 <time dateTime={blog.createdAt} className="mr-8">
                   {blog.createdAt.split("T")[0]}
                 </time>
                 <div className="-ml-4 flex items-center gap-x-4">
                   <svg
                     viewBox="0 0 2 2"
-                    className="-ml-0.5 size-0.5 flex-none fill-white/50"
+                    className="-ml-0.5 size-0.5 flex-none fill-background/50"
                   >
                     <circle r={1} cx={1} cy={1} />
                   </svg>
                   <div className="flex gap-x-2.5">{blog.author}</div>
                 </div>
               </div>
-              <h3 className="mt-3 text-lg/6 font-semibold text-white">
+              <h3 className="mt-3 text-lg/6 font-semibold text-background">
                 <Link href={`/${lang}/blog/${blog.id}`}>
                   {lang === "ja" ? blog.title.title_ja : blog.title.title_en}
                 </Link>

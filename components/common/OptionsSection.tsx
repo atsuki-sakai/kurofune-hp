@@ -31,21 +31,21 @@ export default async function OptionsSection({ lang }: { lang: string }) {
             </span>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <div className="bg-gray-100 w-[100px] md:w-[180px] h-[100px] md:h-[180px] flex"></div>
-            <span className="text-xs md:text-base text-gray-500 mt-2 tracking-wide text-center px-2">
+            <div className="bg-muted w-[100px] md:w-[180px] h-[100px] md:h-[180px] flex"></div>
+            <span className="text-xs md:text-base text-muted-foreground mt-2 tracking-wide text-center px-2">
               Next.js
             </span>
           </div>
           <div className="w-full flex justify-evenly items-center  col-span-3">
             <div className="flex flex-col justify-center items-center">
-              <div className="bg-gray-100 w-[100px] md:w-[180px] h-[100px] md:h-[180px] flex "></div>
-              <span className="text-xs md:text-base text-gray-500 mt-2 tracking-wide text-center px-2">
+              <div className="bg-muted w-[100px] md:w-[180px] h-[100px] md:h-[180px] flex "></div>
+              <span className="text-xs md:text-base text-muted-foreground mt-2 tracking-wide text-center px-2">
                 GCP・Firebase・Supabase
               </span>
             </div>
             <div className="flex flex-col justify-center items-center">
-              <div className="bg-gray-100 w-[100px] md:w-[180px] h-[100px] md:h-[180px] flex "></div>
-              <span className="text-xs md:text-base text-gray-500 mt-2 tracking-wide text-center px-2">
+              <div className="bg-muted w-[100px] md:w-[180px] h-[100px] md:h-[180px] flex "></div>
+              <span className="text-xs md:text-base text-muted-foreground mt-2 tracking-wide text-center px-2">
                 Automation Tools
               </span>
             </div>
