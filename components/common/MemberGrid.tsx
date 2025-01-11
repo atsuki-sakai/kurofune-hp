@@ -1,3 +1,5 @@
+import { useTranslation } from "@/app/i18n";
+
 const people = [
   {
     name: "Leslie Alexander",
@@ -37,8 +39,9 @@ export default function MemberGrid() {
             Our team
           </h2>
           <p className="mt-6 text-lg/8 text-muted-foreground">
-            We're a dynamic group of individuals who are passionate about what
-            we do and dedicated to delivering the best results for our clients.
+            We&apos;re a dynamic group of individuals who are passionate about
+            what we do and dedicated to delivering the best results for our
+            clients.
           </p>
         </div>
         <ul
