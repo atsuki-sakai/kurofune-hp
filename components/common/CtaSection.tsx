@@ -20,6 +20,7 @@ export default async function CtaSection({ lang }: { lang: string }) {
                 {t("home.cta.title")}
               </h2>
               <p className="mt-6 text-pretty text-lg/7 text-foreground">
+
                 {t("home.cta.description")}
               </p>
               <ul
