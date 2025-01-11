@@ -1,0 +1,25 @@
+@layer base {
+    :root {
+        --background: #ffffff;
+        --background-secondary: #f9fafb;
+        --foreground: #111827;
+        --foreground-secondary: #4b5563;
+        --border: #e5e7eb;
+        --primary: #2563eb;
+        --primary-foreground: #ffffff;
+        --secondary: #f3f4f6;
+        --secondary-foreground: #1f2937;
+    }
+
+    .dark {
+        --background: #111827;
+        --background-secondary: #1f2937;
+        --foreground: #f9fafb;
+        --foreground-secondary: #e5e7eb;
+        --border: #374151;
+        --primary: #3b82f6;
+        --primary-foreground: #ffffff;
+        --secondary: #374151;
+        --secondary-foreground: #f3f4f6;
+    }
+}
