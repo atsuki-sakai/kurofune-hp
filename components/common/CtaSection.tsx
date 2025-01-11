@@ -16,15 +16,15 @@ export default async function CtaSection({ lang }: { lang: string }) {
               className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
             />
             <div className="w-full flex-auto">
-              <h2 className="text-pretty text-3xl font-semibold tracking-tight text-background sm:text-4xl">
+              <h2 className="text-pretty text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
                 {t("home.cta.title")}
               </h2>
-              <p className="mt-6 text-pretty text-lg/8 text-muted">
+              <p className="mt-6 text-pretty text-lg/7 text-foreground">
                 {t("home.cta.description")}
               </p>
               <ul
                 role="list"
-                className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-background sm:grid-cols-2"
+                className="mt-10 grid grid-cols-1 gap-x-8 gap-y-3 text-base/7 text-primary sm:grid-cols-2"
               >
                 {[1, 2, 3, 4, 5, 6].map((num) => (
                   <li key={num} className="flex gap-x-3">
@@ -39,7 +39,7 @@ export default async function CtaSection({ lang }: { lang: string }) {
               <div className="mt-10 flex">
                 <Link
                   href={`/${lang}/contact`}
-                  className="text-sm/6 font-semibold text-primary"
+                  className="text-sm/6 font-semibold"
                 >
                   {t("home.cta.contact_link")}{" "}
                   <span aria-hidden="true">&rarr;</span>
