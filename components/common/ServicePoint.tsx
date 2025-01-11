@@ -16,10 +16,10 @@ export default async function ServicePoint({ lang }: { lang: string }) {
           />
         </div>
         <div className="p-3 my-5 tracking-widest md:w-[50%]">
-          <h4 className="font-bold text-3xl md:text-5xl">
+          <h4 className="font-bold text-3xl md:text-5xl text-foreground">
             {t("home.talent.title")}
           </h4>
-          <p className="mt-5 md:mt-10 text-sm md:text-base text-slate-800">
+          <p className="mt-5 md:mt-10 text-sm md:text-base text-muted-foreground">
             {t("home.talent.description")}
           </p>
         </div>

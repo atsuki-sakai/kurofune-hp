@@ -37,17 +37,19 @@ const RowSection = ({
           }`}
         >
           <div className="flex justify-center items-center w-full h-auto translate-x-[25%]">
-            <p className="text-center text-7xl font-extrabold text-blue-100 dark:opacity-20">
+            <p className="text-center text-7xl font-extrabold text-primary/20">
               {bgText}
             </p>
           </div>
         </div>
-        <p className="text-3xl md:text-5xl font-bold">{heading}</p>
-        <span className="block py-5 text-sm md:text-base text-slate-700">
+        <p className="text-3xl md:text-5xl font-bold text-foreground">
+          {heading}
+        </p>
+        <span className="block py-5 text-sm md:text-base text-muted-foreground">
           {desc}
         </span>
         {subText && <span className="block py-1">{subText}</span>}
-        <Button className="mt-8 px-12 py-6 rounded-full font-semibold text-sm md:text-base tracking-widest dark:bg-indigo-900 dark:text-white">
+        <Button className="mt-8 px-12 py-6 rounded-full font-semibold text-sm md:text-base tracking-widest">
           {btnLabel}
         </Button>
       </div>

@@ -29,7 +29,8 @@
       "subtext": "New Graduates・Internships / Mid-Career・Side Jobs / All Positions"
     },
     "pricing": {
-      "title": "No Success Fees.\nKeep Your Recruitment Costs Low.",
+      "subtitle": "No Success Fees.\nKeep Your Recruitment Costs Low.",
+      "title": "Pricing",
       "description": "Wantedly uses a fixed monthly pricing model without success fees, allowing you to optimize your recruitment strategy while keeping costs predictable.",
       "button": "View Pricing"
     },

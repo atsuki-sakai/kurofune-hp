@@ -99,14 +99,13 @@ const navigation = {
 async function Footer({ lang }: Props) {
   const { t } = await useTranslation(lang, "common");
 
-
   return (
-    <footer className="bg-white">
+    <footer className="bg-background">
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Logo lang={lang} />
-            <p className="text-balance text-sm text-gray-600">
+            <p className="text-balance text-sm text-muted-foreground">
               アイデアが動き出す。
               <br />
               進化した次世代のWebソリューション
@@ -116,7 +115,7 @@ async function Footer({ lang }: Props) {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-600 hover:text-gray-800"
+                  className="text-muted-foreground hover:text-foreground"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon aria-hidden="true" className="size-6" />
@@ -127,7 +126,7 @@ async function Footer({ lang }: Props) {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm/6 font-semibold text-gray-900">
+                <h3 className="text-sm/6 font-semibold text-foreground">
                   Solutions
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -135,7 +134,7 @@ async function Footer({ lang }: Props) {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm/6 text-gray-600 hover:text-gray-900"
+                        className="text-sm/6 text-muted-foreground hover:text-foreground"
                       >
                         {item.name}
                       </a>
@@ -144,7 +143,7 @@ async function Footer({ lang }: Props) {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-900">
+                <h3 className="text-sm/6 font-semibold text-foreground">
                   Support
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -152,7 +151,7 @@ async function Footer({ lang }: Props) {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm/6 text-gray-600 hover:text-gray-900"
+                        className="text-sm/6 text-muted-foreground hover:text-foreground"
                       >
                         {item.name}
                       </a>
@@ -163,7 +162,7 @@ async function Footer({ lang }: Props) {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm/6 font-semibold text-gray-900">
+                <h3 className="text-sm/6 font-semibold text-foreground">
                   Company
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -171,7 +170,7 @@ async function Footer({ lang }: Props) {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm/6 text-gray-600 hover:text-gray-900"
+                        className="text-sm/6 text-muted-foreground hover:text-foreground"
                       >
                         {item.name}
                       </a>
@@ -180,13 +179,15 @@ async function Footer({ lang }: Props) {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-900">Legal</h3>
+                <h3 className="text-sm/6 font-semibold text-foreground">
+                  Legal
+                </h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm/6 text-gray-600 hover:text-gray-900"
+                        className="text-sm/6 text-muted-foreground hover:text-foreground"
                       >
                         {item.name}
                       </a>
@@ -197,8 +198,8 @@ async function Footer({ lang }: Props) {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-sm/6 text-gray-600">
+        <div className="mt-16 border-t border-border/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-sm/6 text-muted-foreground">
             &copy; 2024 KUROFUNE, Inc. All rights reserved.
           </p>
         </div>

@@ -60,7 +60,7 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
                     <p className="text-xs font-bold whitespace-pre-line">
                       {t("menu.web-development_title")}
                     </p>
-                    <p className="text-[9px] text-gray-500 whitespace-normal leading-4 py-1">
+                    <p className="text-[9px] text-muted-foreground whitespace-normal leading-4 py-1">
                       {t("menu.web-development_description")}
                     </p>
                   </Button>
@@ -70,7 +70,7 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
                     <p className="text-xs font-bold whitespace-pre-line">
                       {t("menu.shopify_title")}
                     </p>
-                    <p className="text-[9px] text-gray-500 whitespace-normal leading-4 py-1">
+                    <p className="text-[9px] text-muted-foreground whitespace-normal leading-4 py-1">
                       {t("menu.shopify_description")}
                     </p>
                   </Button>
@@ -80,7 +80,7 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
                     <p className="text-xs font-bold whitespace-pre-line">
                       {t("menu.business-improvement_title")}
                     </p>
-                    <p className="text-[9px] text-gray-500 whitespace-normal leading-4 py-1">
+                    <p className="text-[9px] text-muted-foreground whitespace-normal leading-4 py-1">
                       {t("menu.business-improvement_description")}
                     </p>
                   </Button>
@@ -133,7 +133,7 @@ async function MobileMenu({ currentLang }: { currentLang: string }) {
             </Button>
           </SheetClose>
 
-          <div className="w-full border border-dashed border-gray-200 rounded-lg p-4 mb-4 bg-gray-50 dark:bg-gray-900">
+          <div className="w-full border border-dashed border-border rounded-lg p-4 mb-4 bg-muted">
             <p className="text-center text-xs font-medium tracking-wide">
               {t("menu.business_hours")}
             </p>

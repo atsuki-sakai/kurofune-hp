@@ -1,5 +1,6 @@
 import { useTranslation } from "@/app/i18n";
 
+
 export const faqs = [
   {
     id: 1,
@@ -59,24 +60,30 @@ export const faqs = [
 export default async function Faqs({ lang }: { lang: string }) {
   const { t } = await useTranslation(lang, "common");
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl divide-y divide-gray-900/10 px-6 py-24 lg:px-8">
-        <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-          {t("home.faqs.title")}
-        </h2>
-
-        <dl className="mt-10 space-y-8 divide-y divide-gray-900/10">
-          {faqs.map((faq) => (
-            <div key={faq.id} className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8">
-              <dt className="text-base/7 font-semibold text-gray-900 lg:col-span-5">
-                {faq.question}
-              </dt>
-              <dd className="mt-4 lg:col-span-7 lg:mt-0">
-                <p className="text-sm/6 text-gray-600">{faq.answer}</p>
-              </dd>
-            </div>
-          ))}
-        </dl>
+    <div className="bg-background py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl divide-y divide-border/10">
+          <h2 className="text-2xl font-bold leading-10 tracking-tight text-foreground">
+            {t("home.faqs.title")}
+          </h2>
+          <dl className="mt-10 space-y-6 divide-y divide-border/10">
+            {faqs.map((faq) => (
+              <div
+                key={faq.id}
+                className="pt-8 lg:grid lg:grid-cols-12 lg:gap-8"
+              >
+                <dt className="text-base/7 font-semibold text-foreground lg:col-span-5">
+                  {faq.question}
+                </dt>
+                <dd className="mt-4 lg:col-span-7 lg:mt-0">
+                  <p className="text-sm/6 text-muted-foreground">
+                    {faq.answer}
+                  </p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </div>
   );

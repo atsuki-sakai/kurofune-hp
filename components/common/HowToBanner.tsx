@@ -15,11 +15,11 @@ export default async function HowToBanner({ lang }: { lang: string }) {
             height={1080}
             alt=""
           />
-          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 bg-muted opacity-40"></div>
         </div>
         <div className="absolute top-0 bottom-0 left-0 w-full h-full z-10 ">
           <div className="flex justify-center items-center h-full w-full">
-            <p className="block text-white tracking-widest font-bold text-xl md:text-5xl">
+            <p className="block text-background tracking-widest font-bold text-xl md:text-5xl">
               {t("home.whyus.title")}
             </p>
           </div>
